@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>教員の仕事 プロンプトメーカー</title>
+<style>
+:root{--pink:#f7a8b8;--mint:#a8d8ce;--lemon:#ffe08a;--cream:#fff9f2;--ink:#54474b;--muted:#6e6066;--line:#e6dadd;--green:#285c51;--white:#fff;--focus:#6c3d72}
+*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{min-height:100vh;min-height:100dvh}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.7;-webkit-text-size-adjust:100%}button,input,select,textarea{font:inherit;font-size:16px;color:inherit}button,summary,a{touch-action:manipulation}button{cursor:pointer;min-height:44px;border:1px solid var(--line);background:white;border-radius:9px;padding:9px 14px}button:hover{border-color:var(--green)}button:disabled{cursor:default;opacity:.5}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}a{color:var(--green);text-underline-offset:3px}a,button,p,li{overflow-wrap:anywhere}input,select,textarea{width:100%;min-width:0;border:1px solid #b8aaaF;border-radius:8px;background:#fffdfb;padding:10px}input,select{min-height:46px}textarea{resize:vertical}label{display:block;font-weight:700;font-size:14px;margin-bottom:5px}h1,h2,h3,p{margin:0}h1{font-size:clamp(24px,4vw,34px);line-height:1.45;letter-spacing:.03em}h2{font-size:20px;line-height:1.5}h3{font-size:16px}ul,ol{padding-left:22px}summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:700}small,.small{font-size:13px;color:var(--muted)}[hidden]{display:none!important}.wrap{max-width:1160px;padding:24px 24px 56px;margin:auto}.masthead{border-bottom:2px solid var(--mint);padding-bottom:20px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--green);margin-bottom:8px}.intro{margin-top:8px;color:var(--muted);font-size:15px}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}.topline p{margin:0}.version{font-size:12px;color:var(--muted)}.steps{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 0;padding:0;list-style:none;font-size:14px}.steps a{display:inline-flex;min-height:44px;align-items:center;gap:6px}.circle{display:inline-grid;place-items:center;background:var(--mint);border-radius:50%;width:26px;height:26px;color:var(--ink);font-size:13px;flex:none}.privacy{font-size:13px;padding:12px 14px;margin:16px 0;border-left:4px solid var(--mint);background:#f0f7f3}.layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start}.layout>*{min-width:0}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;scroll-margin-top:16px}.section-title{display:flex;gap:10px;align-items:center;margin-bottom:10px}.hint{font-size:13px;color:var(--muted);margin:6px 0 12px}.category{font-size:13px;color:var(--muted);margin:14px 0 6px}.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.job{text-align:left;font-size:14px;display:flex;gap:7px;align-items:center;padding:9px 11px;min-width:0;line-height:1.5}.job .mark{font-size:15px;color:var(--green);flex:none;width:16px}.job[aria-pressed="true"]{border:2px solid var(--green);background:#eaf5ef;font-weight:700;padding:8px 10px}.job:last-child:nth-child(odd){grid-column:1/-1}.source-panel{border-top:1px solid var(--line);margin-top:16px;font-size:13px}.source-panel p{margin:7px 0}.source-panel a{display:inline-flex;min-height:44px;align-items:center}.form-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.example{background:#fff5d4;font-size:14px}.field{margin-top:16px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.required{font-size:12px;font-weight:400;color:#74515b;margin-left:6px}.checkbox{display:flex;gap:10px;align-items:start;margin-top:16px;font-weight:400;min-height:44px;padding:8px 0}.checkbox input{width:20px;height:20px;min-height:20px;flex:none;margin:3px 0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.primary{background:var(--mint);border-color:#78a89c;color:#264c43;font-weight:700;flex:1}.secondary{font-size:14px}.status{font-size:13px;min-height:24px;margin-top:10px}.error{color:#8c3042}.preview-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.copy{background:var(--lemon);font-weight:700}.current-task{margin:8px 0 12px;font-size:14px;color:var(--green);font-weight:700}.output{height:420px;line-height:1.8;font-size:16px;background:#fffdfb;border:1px dashed #bdabb1;overflow-wrap:anywhere;white-space:pre-wrap}.output:focus{border-style:solid}.checklist{font-size:14px;margin-top:12px;padding-left:20px}.checklist li{margin:6px 0}.followup{font-size:14px;background:#f0f7f3;border-radius:8px;padding:12px;margin:10px 0;white-space:pre-wrap}.next-note{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.next-note .field{margin-top:10px}.bottom{margin-top:10px;font-size:13px}.bottom p{margin:8px 0}.bottom a{display:inline-flex;min-height:44px;align-items:center}.footer-list{margin:0;padding-left:20px}.backlink{display:inline-flex;align-items:center;min-height:44px;font-size:13px}.quiet{color:var(--muted)}.skip{position:absolute;top:-100px;left:16px;background:white;padding:12px;z-index:10}.skip:focus{top:10px}noscript{display:block;background:var(--lemon);padding:16px;margin:12px 0}
+.skill-h{font-size:15px;margin:16px 0 4px}.skill-box textarea,.skill-box input{background:#f7faf8}.skill-box .field button{margin-top:6px}#skill summary{color:var(--green)}
+@media(min-width:960px){.preview{position:sticky;top:16px}}
+@media(max-width:959px){.layout{grid-template-columns:minmax(0,1fr)}.output{height:360px}.wrap{max-width:760px}}
+@media(max-width:480px){.wrap{padding:16px 12px 36px}.card{padding:16px}.two{grid-template-columns:1fr;gap:0}.jobs{grid-template-columns:1fr}.job:last-child:nth-child(odd){grid-column:auto}.topline{align-items:start}.version{max-width:90px;text-align:right}.steps{gap:4px 14px}.output{font-size:16px;height:360px}.section-title h2{font-size:18px}.preview-head h2{font-size:18px}.actions .primary{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:white}.layout{display:block}.masthead,.privacy,#choose,#conditions,.bottom,.actions,.copy,.backlink,.next-note{display:none}.card{border:0}.preview{position:static}.output{height:900px;font-size:11px}.followup{background:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#choose">仕事の選択へ進む</a>
+<div class="wrap">
+<header class="masthead">
+<div class="topline"><p class="eyebrow">11月26日 GEG学習会</p><span class="version">試用版 1.1<br>2026.11.21</span></div>
+<h1>教員の仕事 プロンプトメーカー</h1>
+<p class="intro">仕事を一つ選んで、AIへの頼み方を作る。<br>できた下書きは、先生が確かめて仕上げます。</p>
+<ol class="steps" aria-label="使う順番"><li><a href="#choose"><span class="circle">1</span>仕事を選ぶ</a></li><li><a href="#conditions"><span class="circle">2</span>条件を決める</a></li><li><a href="#result"><span class="circle">3</span>コピーして試す</a></li><li><a href="#skill" id="to-skill"><span class="circle">4</span>スキルにする</a></li></ol>
+</header>
+<noscript>JavaScriptを有効にして、このHTMLをブラウザで開き直してください。</noscript>
+<p class="privacy"><strong>公開情報・架空の条件だけで練習します。</strong><br>実在の子供の氏名・成績・出欠・健康・指導記録・家庭状況や、校内の未公開情報は入力しません。入力は送信・保存しません。再読込すると消えます。</p>
+<div class="layout">
+<main aria-label="頼み方の条件">
+<section class="card" id="choose">
+<div class="section-title"><span class="circle">1</span><h2>仕事を一つ選ぶ</h2></div>
+<p class="hint">いつもの仕事に近いものを選びます。初めてなら「学級・学年だより」から。</p>
+<div id="jobs"></div>
+<details class="source-panel" id="task-source"><summary>この仕事の根拠を見る</summary><div id="source-content"></div></details>
+</section>
+<section class="card" id="conditions">
+<div class="section-title"><span class="circle">2</span><h2>頼む条件を決める</h2></div>
+<div class="form-head"><p id="selected-label" class="small"></p><button class="example" id="example" type="button">架空の例を入れる</button></div>
+<form id="form" novalidate>
+<div class="field"><label for="product">作ってほしいもの</label><select id="product"></select></div>
+<div class="two"><div class="field"><label for="audience">だれに向けて</label><select id="audience"><option>保護者</option><option>児童</option><option>生徒</option><option>教職員</option><option>自分の準備用</option><option>地域・外部の方</option></select></div><div class="field"><label for="grade">学校・学年</label><select id="grade"><option value="">指定しない・AIと相談</option><option>小学校低学年</option><option>小学校中学年</option><option>小学校高学年</option><option>中学校1年</option><option>中学校2年</option><option>中学校3年</option><option>小学校全体</option><option>中学校全体</option></select></div></div>
+<div class="field"><label for="theme"><span id="theme-label">テーマ</span><span class="required">必須・100字まで</span></label><input id="theme" type="text" maxlength="100" autocomplete="off" required aria-describedby="theme-hint"><p id="theme-hint" class="hint"></p></div>
+<div class="field"><label for="goal">何のために作る？<span class="required">任意・150字まで</span></label><input id="goal" type="text" maxlength="150" autocomplete="off"></div>
+<div class="field" id="detail-wrap"><label for="detail" id="detail-label">補足条件</label><input id="detail" type="text" maxlength="150" autocomplete="off"><p id="detail-hint" class="hint"></p></div>
+<div class="two"><div class="field"><label for="length">分量の目安</label><select id="length"><option>400字程度</option><option>800字程度</option><option>要点を3つに絞る</option><option>A4 1枚に収まる程度</option><option>不足する条件を確認して決める</option></select></div><div class="field"><label for="tone">伝え方</label><select id="tone"><option>やさしく、具体的に</option><option>簡潔に、要点から</option><option>丁寧で落ち着いた表現</option></select></div></div>
+<div class="field"><label for="extra">ほかに入れたい条件<span class="required">任意・400字まで</span></label><textarea id="extra" rows="3" maxlength="400" placeholder="例：専門用語は説明する。家庭で試すことは一つに絞る。" autocomplete="off"></textarea></div>
+<label class="checkbox"><input id="ask" type="checkbox" checked><span>不足する条件を、書く前に質問してもらう<br><small>初回は最大3問。迷ったら、このままで大丈夫です。</small></span></label>
+<div class="actions"><button type="submit" class="primary" id="generate">プロンプトを作る</button><button type="button" class="secondary" id="reset-all">最初から</button><a class="backlink" href="#result">できあがりへ ↓</a></div>
+<p class="status" id="form-status" role="status" aria-live="polite"></p>
+</form>
+</section>
+</main>
+<aside class="preview" aria-label="できあがりと次の一歩">
+<section class="card" id="result">
+<div class="preview-head"><h2><span class="circle">3</span> コピーして試す</h2><button class="copy" id="copy" type="button" disabled>プロンプトをコピー</button></div>
+<p class="current-task" id="output-label">条件を決めると、ここに頼み方が出ます。</p>
+<label for="output" class="small">AIに貼り付ける文章</label>
+<textarea class="output" id="output" readonly spellcheck="false" placeholder="① 仕事を選ぶ&#10;② 条件を決める、または「架空の例を入れる」&#10;③ 「プロンプトを作る」を押す"></textarea>
+<p class="status" id="copy-status" role="status" aria-live="polite"></p>
+<div id="manual-wrap" hidden><label for="manual" class="small">手動コピーする文章</label><textarea id="manual" readonly rows="5"></textarea><button type="button" id="select-output">文章をすべて選択する</button></div>
+<p class="hint">所属先で利用を認められたAIへ、自分で貼り付けます。このアプリ内ではAIは動きません。</p>
+<details open id="review"><summary>下書きを受け取ったら</summary><ul id="checks" class="checklist"></ul><p class="small">数字・出典・学校の決定事項を確認し、自分の言葉に直してから使います。</p></details>
+<details><summary>もう少し直してもらうには</summary><p id="followup" class="followup"></p><button type="button" id="copy-followup">追加の頼み方をコピー</button></details>
+<details id="skill" class="skill-box"><summary><span class="circle">4</span> スキルにする（Gemini）</summary><p class="small">選んでいる仕事の頼み方を、Gemini の「スキル」として保存します。次からは入力欄で「@」を押してスキルを選ぶと、Gemini が条件を1つずつ聞いてから下書きを作ります。テーマなど、この画面で入れた条件は入りません（毎回聞いてもらう形です）。</p><h3 class="skill-h">A　チャットで作る（いちばん簡単）</h3><p class="small">コピーして Gemini のチャットに貼り、送ります。できたスキルは「カスタマイズ → スキル」に入ります。</p><div class="field"><label for="skill-chat">スキルを作る頼み方</label><textarea id="skill-chat" readonly rows="4" spellcheck="false"></textarea><button type="button" data-skill-copy="skill-chat" data-kind="スキルを作る頼み方">スキルを作る頼み方をコピー</button></div><h3 class="skill-h">B　手動で作る</h3><p class="small">Gemini の「カスタマイズ → スキル → 作成 → 手動で作成」で、3つの欄に1つずつ貼り、「作成」を押します。</p><div class="field"><label for="skill-name">名前（英小文字とハイフン）</label><input id="skill-name" readonly spellcheck="false"><button type="button" data-skill-copy="skill-name" data-kind="名前">名前をコピー</button></div><div class="field"><label for="skill-desc">説明</label><textarea id="skill-desc" readonly rows="2" spellcheck="false"></textarea><button type="button" data-skill-copy="skill-desc" data-kind="説明">説明をコピー</button></div><div class="field"><label for="skill-inst">指示</label><textarea id="skill-inst" readonly rows="6" spellcheck="false"></textarea><button type="button" data-skill-copy="skill-inst" data-kind="指示">指示をコピー</button></div><h3 class="skill-h">C　スキルの画面が出ないとき</h3><p class="small">学校のアカウントでは、スキルが順に使えるようになっている途中です。画面が出ないときは、上の「指示」を Google ドキュメントか Keep に保存しておけば、次から貼るだけで同じように使えます。</p><p class="status" id="skill-status" role="status" aria-live="polite"></p><p class="small">Gem は、個人のアカウントでは2026年11月17日から新しく作れなくなり、スキルに移りました（学校のアカウントは2027年6月まで）。スキルの決まりは2026年11月21日に Gemini のヘルプで確認しました。</p></details>
+<details class="next-note"><summary>最後に、次の一歩を決める</summary><p class="small">メモ欄も保存されません。残す場合は自分でメモします。児童生徒の情報は書きません。</p><div class="field"><label for="reflection">自分で確かめて直すところ</label><input id="reflection" maxlength="120" placeholder="例：問いの難しさを、自分の授業に合わせる。" autocomplete="off"></div><div class="field"><label for="next">次に試す場面</label><input id="next" maxlength="120" placeholder="例：来週の授業準備で、発問を一つ考える。" autocomplete="off"></div></details>
+<a class="backlink" href="#conditions">↑ 条件を直す</a>
+</section>
+</aside>
+</div>
+<footer class="card bottom">
+<details><summary>使い方・根拠・困ったとき</summary>
+<h3>使い方</h3><ol><li>仕事を選び、架空の例または公開できる一般的な条件を入れます。</li><li>プロンプトを作って読み、コピーしてAIに貼り付けます。AIからの質問にも、公開できる条件だけで答えます。</li><li>出力の一か所を自分で確かめて直し、次に試す仕事を決めます。</li><li>よく使う仕事は「スキルにする」から Gemini のスキルとして保存できます。</li></ol>
+<h3>根拠資料</h3><p>6分類・12項目は、探しやすくするための独自の整理です。文科省の公式分類や全職務の一覧ではありません。仕事ごとの根拠は「この仕事の根拠を見る」に表示します。活用案の効果は、このアプリで実証したものではありません。</p>
+<ul class="footer-list"><li><a href="https://www.mext.go.jp/content/20200717-mxt_syoto01-000001234_3.pdf" target="_blank" rel="noopener noreferrer">標準的な職務の通知・別表（文科省、2020年7月17日）</a></li><li><a href="https://www.mext.go.jp/content/20240404-mxt_zaimu01-100003067-1.pdf" target="_blank" rel="noopener noreferrer">教員勤務実態調査・令和4年度確定値概要（文科省、2024年公表）</a></li><li><a href="https://www.mext.go.jp/content/20260216-mxt_kyoikujinzai01-100002245_1.pdf" target="_blank" rel="noopener noreferrer">業務量管理等の指針・3分類（文科省、2026年4月1日適用）</a></li><li><a href="https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf" target="_blank" rel="noopener noreferrer">生成AIガイドライン Ver.2.0（文科省、2024年12月26日）</a></li></ul>
+<p>標準職務例は小・中学校等の参考例です。全員が全業務を担う意味ではありません。校務分掌と設置者の方針を確認します。業務の3分類は19業務の現行資料を参照しています。担当や分担の見直しも、負担軽減の選択肢です。</p>
+<h3>困ったとき</h3><p>コピーできない場合は、出力欄の文章を長押し、または「文章をすべて選択する」から手動でコピーします。条件変更後は、もう一度「プロンプトを作る」を押します。画面が反応しない場合は、このHTMLをブラウザで開き直します。再読込で入力が消えるため、必要な文章は先に自分で控えてください。</p><p>学校の端末で開けないときは、講師に「端末・ブラウザ・押したボタン・画面に出た案内」を伝えます。入力した情報は送らないでください。</p>
+<p>資料確認日：2026年11月17日。作成：勝瀬 駿太／GEG学習会用。外部AIの利用条件・学校アカウントでの機能は別途確認します。アプリは入力を自動送信・保存しません。出典リンクを開くと文科省サイトへ移動します。</p>
+</details>
+</footer>
+</div>
+<script>
+'use strict';
+// [S0] 設定。根拠資料の変更時は確認日と調査メモも更新する。
+const CONFIG={date:'2026年11月17日',version:'1.1',defaultTask:'D01',max:{theme:100,goal:150,detail:150,extra:400}};
+const SOURCES={standard:'https://www.mext.go.jp/content/20200717-mxt_syoto01-000001234_3.pdf#page=8',ai:'https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf#page=14',sharing:'https://www.mext.go.jp/content/20260216-mxt_kyoikujinzai01-100002245_1.pdf#page=9'};
+// [S1] 仕事と根拠。職務の根拠と、具体的なAI活用案を区別する。
+const TASKS=[
+{id:'A01',cat:'授業',name:'1時間の授業を組む',duty:'教育課程及び学習指導',exampleType:'独自提案',products:['目標・活動・時間配分の案','導入場面の比較案','授業案を見直す観点'],audience:'生徒',length:'A4 1枚に収まる程度',theme:'身近な製品から材料の特徴を考える',goal:'材料の性質と使い方を結び付けて考える',detailLabel:'教科・時間・目標など',detail:'技術・家庭科（技術分野）、50分。材料の特徴を比較する。',hint:'教科・時間・目標を一般的な条件で書きます。',guide:'学年、教科、目標に合う授業の流れを検討してください。時間配分の合計を確かめ、活動と目標の関係を示してください。',checks:['活動と目標がつながり、授業時間に収まるか。','学習指導要領の該当箇所と、安全上の配慮を自分で確認する。'],sharing:'授業準備は、補助業務の分担や支援スタッフとの協働も検討する対象です。'},
+{id:'A02',cat:'授業',name:'発問を考える',duty:'教育課程及び学習指導',exampleType:'掲載例に対応',match:'Box-4：発問に対する回答のシミュレーション',products:['発問・想定反応・問い返しの案','導入の問いを3案','発問の難しさを見直す観点'],audience:'生徒',length:'要点を3つに絞る',theme:'同じ形の橋でも、材料が違うと何が変わる？',goal:'材料を選ぶ理由を複数の観点から説明する',detailLabel:'教科・単元・考えさせたいこと',detail:'技術・家庭科（技術分野）、材料と加工。強さ・重さ・費用を比べる。',hint:'実際の児童生徒の発言や記録は入力しません。',guide:'架空の学習場面として、発問、複数の想定反応、そこから考えを深める問い返しを対応させてください。実在の児童生徒の反応と扱わないでください。',checks:['問いが単なる正解当てにならず、目標につながるか。','想定反応は架空の例として、学年や教科に合うか。']},
+{id:'A03',cat:'授業',name:'ワークシートを作る',duty:'教育課程及び学習指導',exampleType:'掲載例に対応',match:'Box-4：教材のたたき台',products:['設問と記入欄の構成案','思考を促す設問案','ワークシートを見直す観点'],audience:'生徒',length:'A4 1枚に収まる程度',theme:'身近な製品の材料を比較する',goal:'特徴を比べ、用途に合う材料を理由付きで選ぶ',detailLabel:'教科・単元・活動時間',detail:'技術・家庭科（技術分野）、個人で考えてからペアで比較、15分。',hint:'市販教材や実際の回答を貼り付けず、活動の条件を書きます。',guide:'設問と記入欄の構成を、目標に向かう順番で示してください。完成したPDFではなく、教員が編集できる文章案にしてください。',checks:['設問数と記入量が活動時間に収まるか。','学年に合う言葉と、考えるための余白があるか。']},
+{id:'B01',cat:'評価',name:'確認問題を作る',duty:'児童生徒の学習評価及び成績処理',exampleType:'掲載例に対応',match:'Box-4：確認テスト問題のたたき台',products:['確認問題・解答・解説の案','理解を確かめる問題3問','問題の曖昧さを見直す観点'],audience:'生徒',length:'A4 1枚に収まる程度',theme:'材料の特徴と使い方',goal:'材料の特徴を用途と結び付けて説明できるか確かめる',detailLabel:'教科・範囲・問題数',detail:'技術・家庭科（技術分野）、材料と加工。選択問題2問と理由を答える問題1問。',hint:'実際の答案・点数は入力しません。',guide:'問題案には解答と解説、確かめたい目標を添えてください。内容の正確さ、複数正解や曖昧さを教員が確認する欄を設けてください。実際の答案の採点・評定はしないでください。',checks:['解答・解説が正しく、条件による別解や曖昧さがないか。','教えた内容・学習指導要領と対応するか。実際の採点・評定は教員が行う。'],sharing:'学習評価・成績処理も、補助業務の分担を含めて負担軽減を検討する対象です。'},
+{id:'B02',cat:'評価',name:'評価規準を検討する',duty:'児童生徒の学習評価及び成績処理',exampleType:'独自提案',products:['目標と評価の観点を結ぶ規準案','学習の様子を見る観点案','規準を見直す確認表'],audience:'自分の準備用',length:'A4 1枚に収まる程度',theme:'用途に合う材料を選ぶ活動',goal:'材料を選んだ理由を、性質と用途の関係から説明する姿を捉える',detailLabel:'教科・学習目標・参照する公開資料',detail:'技術・家庭科（技術分野）。該当する学習指導要領の記述は教員が別途確認する。',hint:'実際の成績や作品は入力しません。規準は案として検討します。',guide:'目標、観察する学習の様子、規準案、教員が公開資料と照合すべき点を対応させてください。公式の評価規準として断定せず、実際の児童生徒の評価・採点・評定はしないでください。',checks:['目標と評価する学習の様子が対応するか。','公式の規準とAIの提案を区別し、学習指導要領等に照合する。']},
+{id:'C01',cat:'学級',name:'学級活動を考える',duty:'学校の組織運営：学年・学級運営',exampleType:'独自提案',products:['話合い活動の流れの案','話合いの問いと進め方','活動を見直す観点'],audience:'生徒',length:'A4 1枚に収まる程度',theme:'互いに過ごしやすい教室を考える',goal:'異なる意見を聞き、実行することを一つ決める',detailLabel:'活動時間・一般的な条件',detail:'50分。個人で考える、班で話す、全体で決める。架空の学級で練習する。',hint:'実在の子供同士のトラブルや指導記録は書きません。',guide:'架空の学級を想定し、児童生徒自身が考え、合意形成する活動案にしてください。参加しにくい場合の選択肢も示し、教員が結論を一方的に決める構成を避けてください。',checks:['子供自身が考え、意見を選べる活動になっているか。','個別の困り事を一般化しすぎていないか。実際の状況への判断は教員が行う。']},
+{id:'D01',cat:'家庭・地域',name:'学級・学年だより',duty:'学年・学級運営、学校に関する情報の提供',exampleType:'掲載例に対応',match:'Box-4：各種お便りのたたき台',products:['見出し・本文案・確認事項','通信の構成案','伝わりやすさを見直す観点'],audience:'保護者',length:'400字程度',theme:'冬休みの生活リズム',goal:'家庭で冬の生活習慣について話すきっかけを作る',detailLabel:'含めたい話題・一般的な条件',detail:'家庭で試せることを一つに絞る。実際の学年の出来事は使わない。',hint:'実際の子供の様子や学校の未発表事項は入力しません。',guide:'家庭を責める表現を避け、具体的で実行しやすい提案にしてください。実際の学校の出来事、日付、連絡先、決定事項は補わず、必要なら［要確認］としてください。',checks:['事実と提案を分け、家庭を責める表現を直す。','日付・学校の方針・連絡事項は、教員が正しい情報に差し替える。'],sharing:'学校全体の広報・ウェブサイト管理は別の業務です。事務職員等の積極的な参画も含め、分担を確認します。'},
+{id:'D02',cat:'家庭・地域',name:'案内文を作る',duty:'保護者及び地域住民等との連携・協力',exampleType:'掲載例に対応',match:'Box-4：通知文・案内文のたたき台',products:['案内文の本文と空欄の項目','案内に必要な項目の一覧','案内文を見直す観点'],audience:'保護者',length:'400字程度',theme:'架空の授業参観の案内',goal:'参加に必要な情報を、読み取りやすい順で伝える',detailLabel:'必要な項目・一般的な条件',detail:'日時・会場・申込方法・連絡先は空欄にする。',hint:'未公開の行事日程や実際の連絡先は書きません。',guide:'日時、場所、申込方法、連絡先、持ち物は、提示されていなければ具体的な値を創作せず［要確認］として並べてください。',checks:['必要な情報の抜けと、創作された日程・場所がないか。','学校が決めた内容を自分で確認してから配る。']},
+{id:'E01',cat:'行事・校務',name:'行事の準備を見通す',duty:'教育課程の準備：学校行事等の準備・運営',exampleType:'独自提案',products:['準備の作業一覧・役割・確認事項','準備の段取りの案','役割分担を見直す観点'],audience:'教職員',length:'A4 1枚に収まる程度',theme:'架空の校外学習の準備',goal:'必要な作業と分担を見通し、抜けに気付く',detailLabel:'時期・規模などの架空の条件',detail:'中学校1学年、日帰りの架空行事。実際の場所・日時・参加人数は使わない。',hint:'実際の行程表や児童生徒の情報は入力しません。',guide:'事前・当日・事後に分けた作業一覧を示し、担当は個人名ではなく役割で示してください。省く・分担する選択肢も出してください。現地条件や安全性を確認済みと扱わず、学校の安全計画等と照合する点を残してください。',checks:['作業や役割が増えすぎず、省略・分担を考えられるか。','実際の現地条件・安全計画・緊急時体制は、別途確認する。'],sharing:'行事準備は、事務職員・支援スタッフとの協働や、必要に応じた委託も検討する対象です。'},
+{id:'E02',cat:'行事・校務',name:'会議の論点を整える',duty:'学校の組織運営：各種委員会の企画・運営',exampleType:'独自提案',products:['議題・検討の問い・決めることの案','短い会議の進行案','会議を見直す観点'],audience:'教職員',length:'A4 1枚に収まる程度',theme:'架空の教材共有の仕組みを考える会議',goal:'共有方法と次の一歩を、短い時間で決める',detailLabel:'会議時間・架空の条件',detail:'20分。公開できる教材を共有する方法を、架空のチームで検討する。',hint:'実際の会議内容、人事、職員の評価は入力しません。',guide:'架空議題だけで、共有すること・相談すること・決定することを分けてください。検討の問い、時間配分、決定事項の空欄を出してください。実際の議事録や決定事項を創作しないでください。',checks:['話すことと決めることが区別され、時間内に収まるか。','架空の案を、実際の会議で決まったことと混同しない。']},
+{id:'F01',cat:'研修',name:'校内研修を組む',duty:'研修：校内研修の企画・実施・受講',exampleType:'掲載例に対応',match:'Box-4：校内研修の資料のたたき台',products:['目標・流れ・短い演習の案','研修資料の構成案','研修を見直す観点'],audience:'教職員',length:'A4 1枚に収まる程度',theme:'生成AIでお便りの下書きを作る',goal:'架空の条件で試し、出力を自分で確かめて直せる',detailLabel:'時間・参加者・一般的な条件',detail:'30分。初めて使う先生を想定。見本、一緒に練習、自分で試す時間を設ける。',hint:'校内の未公開情報や実際の参加者名は書きません。',guide:'目標と活動を対応させ、説明だけでなく短い練習と振り返りを入れてください。方法を知る・内容を確かめる・仕事に結び付ける場面を示してください。時間配分の合計も確認してください。',checks:['目標に合う演習と、出力を確かめる時間があるか。','操作が遅れた人の代替手段と、次に試す場面があるか。']},
+{id:'F02',cat:'研修',name:'公開資料を読み解く',duty:'研修：職責を遂行するために必要な研修',exampleType:'独自提案',products:['資料の要点・疑問・確認箇所の整理','資料を読むための問い','実務への示唆と未確認事項'],audience:'自分の準備用',length:'要点を3つに絞る',theme:'生成AIガイドライン Ver.2.0の校務利用',goal:'参考になる使い方と、利用条件を分けて理解する',detailLabel:'資料名・読む範囲',detail:'文科省、2024年12月26日。本文13〜16ページ。資料の本文はAI側で別途提供する。',hint:'資料本文はここに貼らず、AI側で提供します。URLだけで読めたと仮定しません。',guide:'資料本文は、このプロンプトの貼付後に利用者が提供します。本文を確認できるまでは要約せず、公開資料の本文または読める形での提供を求めてください。提供後は、根拠の箇所とページ、不明な点を示してください。資料の記述とあなたの提案・推測を分け、未確認の引用を作らないでください。',checks:['AIが実際に読めた資料と、示したページ・内容が一致するか。','資料の事実・AIの推測・自分の実務への提案を分ける。']}
+];
+// [S2] 入力はこの画面だけ。ストレージ・通信・外部AIは使用しない。
+const $=id=>document.getElementById(id);
+let current=TASKS.find(t=>t.id===CONFIG.defaultTask),hasCustom=false,copyEpoch=0;
+const promptFields=['product','audience','grade','theme','goal','detail','length','tone','extra','ask'];
+const clean=(value,max)=>{let s=String(value??'').replace(/\r\n?/g,'\n').slice(0,max);const last=s.charCodeAt(s.length-1);if(last>=0xd800&&last<=0xdbff)s=s.slice(0,-1);return s.trim();};
+function optionValues(id){return Array.from($(id).options,o=>o.value);}
+function choice(id){const value=$(id).value;return optionValues(id).includes(value)?value:optionValues(id)[0];}
+function field(id){return clean($(id).value,CONFIG.max[id]);}
+function link(text,url){const a=document.createElement('a');a.textContent=text;a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
+function sourceText(text){const p=document.createElement('p');p.textContent=text;return p;}
+function renderSource(){
+ const box=$('source-content');box.replaceChildren();
+ box.append(sourceText('業務の根拠：'+current.duty+'。'),link('標準的な職務の通知・別表（PDF8ページ）',SOURCES.standard));
+ box.append(sourceText('文部科学省、2020年7月17日。全員に一律に割り当てる業務の一覧ではありません。'));
+ box.append(sourceText('AI活用案：'+current.exampleType+'。'+(current.match||'標準職務を手がかりにした講師の案です。')));
+ if(current.match)box.append(link('生成AIガイドライン・Box-4（本文14ページ）',SOURCES.ai));
+ if(current.sharing)box.append(sourceText(current.sharing),link('業務の分担・負担軽減の指針',SOURCES.sharing));
+ box.append(sourceText('操作用の分類・具体的なプロンプトは独自案です。効果を保証するものではありません。確認日：'+CONFIG.date+'。'));
+}
+function invalidate(){
+ copyEpoch++;
+ $('output').value='';$('copy').disabled=true;$('output-label').textContent='条件を決めて「プロンプトを作る」を押してください。';
+ $('copy-status').textContent='';$('manual-wrap').hidden=true;$('manual').value='';
+ $('form-status').textContent='';$('form-status').classList.remove('error');$('theme').removeAttribute('aria-invalid');
+}
+function selectTask(id,force=false){
+ const task=TASKS.find(t=>t.id===String(id));if(!task||(!force&&task.id===current.id))return;
+ if(!force&&hasCustom&&!window.confirm('入力した条件と振り返りメモを消して、仕事を変えますか？'))return;
+ current=task;$('form').reset();$('reflection').value='';$('next').value='';hasCustom=false;
+ $('product').replaceChildren(...task.products.map(text=>{const o=document.createElement('option');o.textContent=text;return o;}));
+ $('audience').value=task.audience;$('length').value=task.length;
+ $('selected-label').textContent='選択中：'+task.name;$('theme-label').textContent='テーマ';$('theme').placeholder='例：'+task.theme;
+ $('theme-hint').textContent=task.hint;$('goal').placeholder='例：'+task.goal;
+ $('detail-label').textContent=task.detailLabel+'（任意・150字まで）';$('detail').placeholder=task.detail;
+ $('detail-hint').textContent=task.id==='F02'?'資料本文がないときは、AIに提供を求めてもらいます。':'未記入の条件は、質問するか［要確認］として残します。';
+ document.querySelectorAll('[data-task]').forEach(b=>{const selected=b.dataset.task===task.id;b.setAttribute('aria-pressed',String(selected));b.querySelector('.mark').textContent=selected?'✓':'○';});
+ renderSource();renderSkill();$('checks').replaceChildren(...task.checks.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+ $('followup').textContent='この下書きを、目的に合うようにもう一度見直してください。要点を一つ絞り、直した理由も短く示してください。未確認の事実は補わず、［要確認］を残してください。';
+ invalidate();
+}
+// [S3] 固定の守りは、利用者の条件の後ろに付ける。スキルの指示にも同じ文を使う。
+const RULES=['実在の児童生徒の氏名・成績・出欠・健康・指導や相談の記録・家庭状況、校内の未公開情報は求めないでください。質問する場合にも同じです。','実在の個人の採点・評定・診断・個別の対応方針の決定は行わないでください。','日付・連絡先・学校の決定事項など、不明な事実は補わず［要確認］としてください。','根拠を確認できない統計・引用・出典を作らないでください。資料を読めない場合は、そのことを明示してください。','事実、提案、推測を区別してください。引用や具体的な根拠は、確認できる資料と箇所を示してください。','最後に、教員が確かめる点を短く示してください。教員が内容・表現・根拠を確認し、最終的に判断して仕上げます。'];
+function makePrompt(){
+ const entries=[['仕事',current.name],['作ってほしいもの',choice('product')],['対象',choice('audience')],['学校・学年',choice('grade')||'未指定。必要なら確認する'],['テーマ',field('theme')],['目的',field('goal')||'未指定。必要なら確認する'],[current.detailLabel,field('detail')||'未指定。必要なら確認する'],['分量の目安',choice('length')],['伝え方',choice('tone')],['追加の条件',field('extra')||'なし']];
+ const mode=$('ask').checked?'書き始める前に、不足する条件があれば初回は最大3問で質問してください。条件が足りていれば下書きへ進んでください。':'確認が必要な点は［要確認］として残し、分かる範囲で下書きを作ってください。不明な条件を推測で埋めないでください。';
+ return ['あなたは、教員の仕事の準備と文章づくりを支援するアシスタントです。','以下の条件で、教員が編集・確認できるたたき台を作ってください。','',...entries.map(([key,value])=>'【'+key+'】'+value),'','【この仕事で大切にすること】',current.guide,'','【対話の進め方】',mode,'','【情報の扱いと確認】','この依頼は、公開情報・架空の条件による練習です。',...RULES].join('\n');
+}
+// [S3b] スキルにする。Gemini のスキルは名前（英小文字とハイフン）・説明・指示。画面の自由記述は入れない。
+const SKILL_SLUG={A01:'jugyo-wo-kumu',A02:'hatsumon',A03:'worksheet',B01:'kakunin-mondai',B02:'hyoka-kijun',C01:'gakkyu-katsudo',D01:'gakkyu-dayori',D02:'annai-bun',E01:'gyoji-junbi',E02:'kaigi-ronten',F01:'konai-kenshu',F02:'shiryo-yomitoki'};
+function skillParts(){
+ const opts=id=>optionValues(id).filter(Boolean).join('／');
+ const name=SKILL_SLUG[current.id]||'kyoin-prompt';
+ const desc=current.name+'のたたき台を、条件を1つずつ質問しながら一緒に作る。教員が確かめて仕上げる前提で使う。';
+ const inst=['あなたは、教員の「'+current.name+'」を手伝うアシスタントです。',
+  '呼び出されたら、すぐに書き始めず、次の条件を1つずつ質問してください。選択肢は番号つきで示し、「おまかせ」と言われた項目は［おすすめ］を選んでください。最初の依頼にすでに書かれている条件は、聞かずに進めてください。',
+  '1. 作ってほしいもの：'+current.products.join('／')+'［おすすめ：'+current.products[0]+'］',
+  '2. だれに向けて：'+opts('audience')+'［おすすめ：'+current.audience+'］',
+  '3. 学校・学年：'+opts('grade')+'［おすすめ：相手に合わせて相談］',
+  '4. テーマ：自由に答えてもらう（例：'+current.theme+'）',
+  '5. 何のために作るか：自由に答えてもらう（例：'+current.goal+'）',
+  '6. '+current.detailLabel+'：自由に答えてもらう（例：'+current.detail+'）。なければ飛ばす',
+  '7. 分量の目安：'+opts('length')+'［おすすめ：'+current.length+'］',
+  '8. 伝え方：'+opts('tone')+'［おすすめ：'+optionValues('tone')[0]+'］',
+  '聞き終えたら、条件を短くまとめて確かめてから、たたき台を作ってください。',
+  '','【この仕事で大切にすること】',current.guide,
+  '','【情報の扱いと確認】','このスキルは、公開情報・架空の条件で使います。',...RULES].join('\n');
+ const chat=['次の指示をもとに、Gemini のスキルを作ってください。','名前：'+name,'説明：'+desc,'','【指示】',inst].join('\n');
+ return {name,desc,inst,chat};
+}
+function renderSkill(){const k=skillParts();$('skill-chat').value=k.chat;$('skill-name').value=k.name;$('skill-desc').value=k.desc;$('skill-inst').value=k.inst;$('skill-status').textContent='';}
+// コピーできないときは、その欄の文を選んだ状態にする。
+async function copySkill(button){
+ const el=$(button.dataset.skillCopy),kind=button.dataset.kind,status=$('skill-status');button.after(status);
+ const text=el.value;if(!text)return;status.textContent='コピーしています…';let timer;
+ try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('手動コピー');await Promise.race([navigator.clipboard.writeText(text),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('時間切れ')),3000);})]);status.textContent=kind+'をコピーしました。Gemini に自分で貼り付けてください。';}
+ catch(e){el.focus();el.select();try{el.setSelectionRange(0,text.length);}catch(_){}status.textContent='自動コピーが使えません。'+kind+'の欄の文を選んだので、端末のコピー操作（長押し・Ctrl+C）でコピーしてください。';}
+ finally{clearTimeout(timer);}
+}
+function generate(focusError=true){
+ invalidate();
+ for(const id of Object.keys(CONFIG.max))$(id).value=clean($(id).value,CONFIG.max[id]);
+ if(!field('theme')){$('form-status').textContent='テーマを一つ入れてください。迷ったら「架空の例を入れる」から試せます。';$('form-status').classList.add('error');$('theme').setAttribute('aria-invalid','true');if(focusError)$('theme').focus();return false;}
+ $('output').value=makePrompt();$('copy').disabled=false;$('output-label').textContent=current.name+'の頼み方';$('form-status').textContent='頼み方を作りました。「コピーして試す」で読み、AIへ貼り付けます。';return true;
+}
+function loadExample(){
+ if(hasCustom&&!window.confirm('入力した条件を、選んでいる仕事の架空例に置き換えますか？'))return;
+ $('form').reset();$('audience').value=current.audience;$('length').value=current.length;$('grade').value='中学校1年';
+ ['theme','goal','detail'].forEach(id=>$(id).value=current[id]);hasCustom=true;generate();
+}
+// [S4] コピーが拒否されたら、現在の文を選択できる欄へ戻す。
+async function copy(text,kind){
+ if(!text)return;
+ const epoch=++copyEpoch;
+ const status=$('copy-status');status.textContent='コピーしています…';$('manual-wrap').hidden=true;$('manual').value='';let timer;
+ try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('手動コピー');await Promise.race([navigator.clipboard.writeText(text),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('時間切れ')),3000);})]);if(epoch===copyEpoch)status.textContent=kind+'をコピーしました。AIへ自分で貼り付けてください。';}
+ catch(e){if(epoch!==copyEpoch)return;
+  $('manual-wrap').hidden=false;$('manual').value=text;status.textContent='自動コピーが使えません。下のボタンで文章を選び、手動でコピーしてください。';
+ }finally{clearTimeout(timer);}
+}
+// [S5] 画面を起動する。
+for(const category of ['授業','評価','学級','家庭・地域','行事・校務','研修']){
+ const heading=document.createElement('h3');heading.className='category';heading.textContent=category;
+ const group=document.createElement('div');group.className='jobs';group.setAttribute('role','group');group.setAttribute('aria-label',category+'の仕事');
+ for(const task of TASKS.filter(t=>t.cat===category)){
+  const b=document.createElement('button');b.type='button';b.className='job';b.dataset.task=task.id;b.setAttribute('aria-pressed','false');
+  const mark=document.createElement('span');mark.className='mark';mark.setAttribute('aria-hidden','true');mark.textContent='○';
+  b.append(mark,document.createTextNode(task.name));b.addEventListener('click',()=>selectTask(task.id));group.append(b);
+ }
+ $('jobs').append(heading,group);
+}
+for(const id of promptFields){$(id).addEventListener(id==='ask'||$(id).tagName==='SELECT'?'change':'input',()=>{hasCustom=true;invalidate();});}
+for(const id of ['reflection','next'])$(id).addEventListener('input',()=>{hasCustom=true;});
+$('form').addEventListener('submit',e=>{e.preventDefault();generate();});
+$('example').addEventListener('click',loadExample);
+$('reset-all').addEventListener('click',()=>{if(hasCustom&&!window.confirm('すべての条件とメモを消して、最初に戻りますか？'))return;selectTask(CONFIG.defaultTask,true);$('form-status').textContent='最初の状態に戻しました。';});
+$('copy').addEventListener('click',()=>copy($('output').value,'プロンプト'));
+$('copy-followup').addEventListener('click',()=>copy($('followup').textContent,'追加の頼み方'));
+$('select-output').addEventListener('click',()=>{$('manual').focus();$('manual').select();$('manual').setSelectionRange(0,$('manual').value.length);$('copy-status').textContent='文章を選択しました。端末のコピー操作でコピーしてください。';});
+document.querySelectorAll('[data-skill-copy]').forEach(b=>b.addEventListener('click',()=>copySkill(b)));
+$('to-skill').addEventListener('click',()=>{$('skill').open=true;});
+selectTask(CONFIG.defaultTask,true);
+</script>
+</body>
+</html>
