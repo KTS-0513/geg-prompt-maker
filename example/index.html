@@ -8,6 +8,7 @@
 <style>
 :root{--pink:#f7a8b8;--mint:#a8d8ce;--lemon:#ffe08a;--cream:#fff9f2;--ink:#54474b;--muted:#6e6066;--line:#e6dadd;--green:#285c51;--white:#fff;--focus:#6c3d72}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{min-height:100vh;min-height:100dvh}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.7;-webkit-text-size-adjust:100%}button,input,select,textarea{font:inherit;font-size:16px;color:inherit}button,summary,a{touch-action:manipulation}button{cursor:pointer;min-height:44px;border:1px solid var(--line);background:white;border-radius:9px;padding:9px 14px}button:hover{border-color:var(--green)}button:disabled{cursor:default;opacity:.5}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}a{color:var(--green);text-underline-offset:3px}a,button,p,li{overflow-wrap:anywhere}input,select,textarea{width:100%;min-width:0;border:1px solid #b8aaaF;border-radius:8px;background:#fffdfb;padding:10px}input,select{min-height:46px}textarea{resize:vertical}label{display:block;font-weight:700;font-size:14px;margin-bottom:5px}h1,h2,h3,p{margin:0}h1{font-size:clamp(24px,4vw,34px);line-height:1.45;letter-spacing:.03em}h2{font-size:20px;line-height:1.5}h3{font-size:16px}ul,ol{padding-left:22px}summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:700}small,.small{font-size:13px;color:var(--muted)}[hidden]{display:none!important}.wrap{max-width:1160px;padding:24px 24px 56px;margin:auto}.masthead{border-bottom:2px solid var(--mint);padding-bottom:20px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--green);margin-bottom:8px}.intro{margin-top:8px;color:var(--muted);font-size:15px}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}.topline p{margin:0}.version{font-size:12px;color:var(--muted)}.steps{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0 0;padding:0;list-style:none;font-size:14px}.steps a{display:inline-flex;min-height:44px;align-items:center;gap:6px}.circle{display:inline-grid;place-items:center;background:var(--mint);border-radius:50%;width:26px;height:26px;color:var(--ink);font-size:13px;flex:none}.privacy{font-size:13px;padding:12px 14px;margin:16px 0;border-left:4px solid var(--mint);background:#f0f7f3}.layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start}.layout>*{min-width:0}.card{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;scroll-margin-top:16px}.section-title{display:flex;gap:10px;align-items:center;margin-bottom:10px}.hint{font-size:13px;color:var(--muted);margin:6px 0 12px}.category{font-size:13px;color:var(--muted);margin:14px 0 6px}.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.job{text-align:left;font-size:14px;display:flex;gap:7px;align-items:center;padding:9px 11px;min-width:0;line-height:1.5}.job .mark{font-size:15px;color:var(--green);flex:none;width:16px}.job[aria-pressed="true"]{border:2px solid var(--green);background:#eaf5ef;font-weight:700;padding:8px 10px}.job:last-child:nth-child(odd){grid-column:1/-1}.source-panel{border-top:1px solid var(--line);margin-top:16px;font-size:13px}.source-panel p{margin:7px 0}.source-panel a{display:inline-flex;min-height:44px;align-items:center}.form-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.example{background:#fff5d4;font-size:14px}.field{margin-top:16px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.required{font-size:12px;font-weight:400;color:#74515b;margin-left:6px}.checkbox{display:flex;gap:10px;align-items:start;margin-top:16px;font-weight:400;min-height:44px;padding:8px 0}.checkbox input{width:20px;height:20px;min-height:20px;flex:none;margin:3px 0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.primary{background:var(--mint);border-color:#78a89c;color:#264c43;font-weight:700;flex:1}.secondary{font-size:14px}.status{font-size:13px;min-height:24px;margin-top:10px}.error{color:#8c3042}.preview-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.copy{background:var(--lemon);font-weight:700}.current-task{margin:8px 0 12px;font-size:14px;color:var(--green);font-weight:700}.output{height:420px;line-height:1.8;font-size:16px;background:#fffdfb;border:1px dashed #bdabb1;overflow-wrap:anywhere;white-space:pre-wrap}.output:focus{border-style:solid}.checklist{font-size:14px;margin-top:12px;padding-left:20px}.checklist li{margin:6px 0}.followup{font-size:14px;background:#f0f7f3;border-radius:8px;padding:12px;margin:10px 0;white-space:pre-wrap}.next-note{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.next-note .field{margin-top:10px}.bottom{margin-top:10px;font-size:13px}.bottom p{margin:8px 0}.bottom a{display:inline-flex;min-height:44px;align-items:center}.footer-list{margin:0;padding-left:20px}.backlink{display:inline-flex;align-items:center;min-height:44px;font-size:13px}.quiet{color:var(--muted)}.skip{position:absolute;top:-100px;left:16px;background:white;padding:12px;z-index:10}.skip:focus{top:10px}noscript{display:block;background:var(--lemon);padding:16px;margin:12px 0}
+.nb{display:inline-block}.lens{border:1px solid var(--line);border-radius:8px;padding:8px 12px 10px;margin:16px 0 0;min-width:0}.lens legend{font-weight:700;font-size:14px;padding:0 4px}.lens label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;min-height:44px;padding:6px 0;margin:0}.lens input{width:auto;min-height:0;margin-top:6px;flex:none}.lens small{display:block}
 .skill-h{font-size:15px;margin:16px 0 4px}.skill-box textarea,.skill-box input{background:#f7faf8}.skill-box .field button{margin-top:6px}#skill summary{color:var(--green)}
 @media(min-width:960px){.preview{position:sticky;top:16px}}
 @media(max-width:959px){.layout{grid-template-columns:minmax(0,1fr)}.output{height:360px}.wrap{max-width:760px}}
@@ -20,8 +21,8 @@
 <a class="skip" href="#choose">仕事の選択へ進む</a>
 <div class="wrap">
 <header class="masthead">
-<div class="topline"><p class="eyebrow">11月26日 GEG学習会</p><span class="version">試用版 1.1<br>2026.11.21</span></div>
-<h1>教員の仕事 プロンプトメーカー</h1>
+<div class="topline"><p class="eyebrow">11月26日 GEG学習会</p><span class="version">試用版 1.2<br>2026.11.21</span></div>
+<h1>教員の仕事 <span class="nb">プロンプトメーカー</span></h1>
 <p class="intro">仕事を一つ選んで、AIへの頼み方を作る。<br>できた下書きは、先生が確かめて仕上げます。</p>
 <ol class="steps" aria-label="使う順番"><li><a href="#choose"><span class="circle">1</span>仕事を選ぶ</a></li><li><a href="#conditions"><span class="circle">2</span>条件を決める</a></li><li><a href="#result"><span class="circle">3</span>コピーして試す</a></li><li><a href="#skill" id="to-skill"><span class="circle">4</span>スキルにする</a></li></ol>
 </header>
@@ -46,6 +47,7 @@
 <div class="field" id="detail-wrap"><label for="detail" id="detail-label">補足条件</label><input id="detail" type="text" maxlength="150" autocomplete="off"><p id="detail-hint" class="hint"></p></div>
 <div class="two"><div class="field"><label for="length">分量の目安</label><select id="length"><option>400字程度</option><option>800字程度</option><option>要点を3つに絞る</option><option>A4 1枚に収まる程度</option><option>不足する条件を確認して決める</option></select></div><div class="field"><label for="tone">伝え方</label><select id="tone"><option>やさしく、具体的に</option><option>簡潔に、要点から</option><option>丁寧で落ち着いた表現</option></select></div></div>
 <div class="field"><label for="extra">ほかに入れたい条件<span class="required">任意・400字まで</span></label><textarea id="extra" rows="3" maxlength="400" placeholder="例：専門用語は説明する。家庭で試すことは一つに絞る。" autocomplete="off"></textarea></div>
+<fieldset class="lens"><legend>理論の視点<span class="required">任意・選んだ分だけ頼み方に入ります</span></legend><div id="lenses"></div><p class="small">学習理論・教育心理学の知見を、頼み方の手がかりにします。効果を保証するものではありません。出典は「この仕事の根拠を見る」に出ます。</p></fieldset>
 <label class="checkbox"><input id="ask" type="checkbox" checked><span>不足する条件を、書く前に質問してもらう<br><small>初回は最大3問。迷ったら、このままで大丈夫です。</small></span></label>
 <div class="actions"><button type="submit" class="primary" id="generate">プロンプトを作る</button><button type="button" class="secondary" id="reset-all">最初から</button><a class="backlink" href="#result">できあがりへ ↓</a></div>
 <p class="status" id="form-status" role="status" aria-live="polite"></p>
@@ -71,7 +73,7 @@
 </div>
 <footer class="card bottom">
 <details><summary>使い方・根拠・困ったとき</summary>
-<h3>使い方</h3><ol><li>仕事を選び、架空の例または公開できる一般的な条件を入れます。</li><li>プロンプトを作って読み、コピーしてAIに貼り付けます。AIからの質問にも、公開できる条件だけで答えます。</li><li>出力の一か所を自分で確かめて直し、次に試す仕事を決めます。</li><li>よく使う仕事は「スキルにする」から Gemini のスキルとして保存できます。</li></ol>
+<h3>使い方</h3><ol><li>仕事を選び、架空の例または公開できる一般的な条件を入れます。</li><li>プロンプトを作って読み、コピーしてAIに貼り付けます。AIからの質問にも、公開できる条件だけで答えます。</li><li>出力の一か所を自分で確かめて直し、次に試す仕事を決めます。</li><li>「理論の視点」を選ぶと、学習理論・教育心理学の知見を手がかりにした頼み方になります。</li><li>よく使う仕事は「スキルにする」から Gemini のスキルとして保存できます。</li></ol>
 <h3>根拠資料</h3><p>6分類・12項目は、探しやすくするための独自の整理です。文科省の公式分類や全職務の一覧ではありません。仕事ごとの根拠は「この仕事の根拠を見る」に表示します。活用案の効果は、このアプリで実証したものではありません。</p>
 <ul class="footer-list"><li><a href="https://www.mext.go.jp/content/20200717-mxt_syoto01-000001234_3.pdf" target="_blank" rel="noopener noreferrer">標準的な職務の通知・別表（文科省、2020年7月17日）</a></li><li><a href="https://www.mext.go.jp/content/20240404-mxt_zaimu01-100003067-1.pdf" target="_blank" rel="noopener noreferrer">教員勤務実態調査・令和4年度確定値概要（文科省、2024年公表）</a></li><li><a href="https://www.mext.go.jp/content/20260216-mxt_kyoikujinzai01-100002245_1.pdf" target="_blank" rel="noopener noreferrer">業務量管理等の指針・3分類（文科省、2026年4月1日適用）</a></li><li><a href="https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf" target="_blank" rel="noopener noreferrer">生成AIガイドライン Ver.2.0（文科省、2024年12月26日）</a></li></ul>
 <p>標準職務例は小・中学校等の参考例です。全員が全業務を担う意味ではありません。校務分掌と設置者の方針を確認します。業務の3分類は19業務の現行資料を参照しています。担当や分担の見直しも、負担軽減の選択肢です。</p>
@@ -83,7 +85,7 @@
 <script>
 'use strict';
 // [S0] 設定。根拠資料の変更時は確認日と調査メモも更新する。
-const CONFIG={date:'2026年11月17日',version:'1.1',defaultTask:'D01',max:{theme:100,goal:150,detail:150,extra:400}};
+const CONFIG={date:'2026年11月17日',version:'1.2',defaultTask:'D01',max:{theme:100,goal:150,detail:150,extra:400}};
 const SOURCES={standard:'https://www.mext.go.jp/content/20200717-mxt_syoto01-000001234_3.pdf#page=8',ai:'https://www.mext.go.jp/content/20241226-mxt_shuukyo02-000030823_001.pdf#page=14',sharing:'https://www.mext.go.jp/content/20260216-mxt_kyoikujinzai01-100002245_1.pdf#page=9'};
 // [S1] 仕事と根拠。職務の根拠と、具体的なAI活用案を区別する。
 const TASKS=[
@@ -100,6 +102,35 @@ const TASKS=[
 {id:'F01',cat:'研修',name:'校内研修を組む',duty:'研修：校内研修の企画・実施・受講',exampleType:'掲載例に対応',match:'Box-4：校内研修の資料のたたき台',products:['目標・流れ・短い演習の案','研修資料の構成案','研修を見直す観点'],audience:'教職員',length:'A4 1枚に収まる程度',theme:'生成AIでお便りの下書きを作る',goal:'架空の条件で試し、出力を自分で確かめて直せる',detailLabel:'時間・参加者・一般的な条件',detail:'30分。初めて使う先生を想定。見本、一緒に練習、自分で試す時間を設ける。',hint:'校内の未公開情報や実際の参加者名は書きません。',guide:'目標と活動を対応させ、説明だけでなく短い練習と振り返りを入れてください。方法を知る・内容を確かめる・仕事に結び付ける場面を示してください。時間配分の合計も確認してください。',checks:['目標に合う演習と、出力を確かめる時間があるか。','操作が遅れた人の代替手段と、次に試す場面があるか。']},
 {id:'F02',cat:'研修',name:'公開資料を読み解く',duty:'研修：職責を遂行するために必要な研修',exampleType:'独自提案',products:['資料の要点・疑問・確認箇所の整理','資料を読むための問い','実務への示唆と未確認事項'],audience:'自分の準備用',length:'要点を3つに絞る',theme:'生成AIガイドライン Ver.2.0の校務利用',goal:'参考になる使い方と、利用条件を分けて理解する',detailLabel:'資料名・読む範囲',detail:'文科省、2024年12月26日。本文13〜16ページ。資料の本文はAI側で別途提供する。',hint:'資料本文はここに貼らず、AI側で提供します。URLだけで読めたと仮定しません。',guide:'資料本文は、このプロンプトの貼付後に利用者が提供します。本文を確認できるまでは要約せず、公開資料の本文または読める形での提供を求めてください。提供後は、根拠の箇所とページ、不明な点を示してください。資料の記述とあなたの提案・推測を分け、未確認の引用を作らないでください。',checks:['AIが実際に読めた資料と、示したページ・内容が一致するか。','資料の事実・AIの推測・自分の実務への提案を分ける。']}
 ];
+// [S1b] 理論の視点。要点と頼み方に入れる一文。書誌は 04_理論の骨組み §7 と同じ（確認日は CONFIG.date）。
+const THEORIES={
+ ubd:{name:'逆向き設計',ref:'Wiggins & McTighe, 2005',cite:'Wiggins, G., & McTighe, J. (2005). Understanding by design (Expanded 2nd ed.). ASCD.',gist:'求める結果 → 評価の方法 → 学習の計画の順に設計する。',line:'最初に「終わったときにできていてほしいこと」と「それをどう確かめるか」を示し、そこから活動を組んでください。'},
+ cogapp:{name:'認知的徒弟制',ref:'Collins, Brown, & Newman, 1989',cite:'Collins, A., Brown, J. S., & Newman, S. E. (1989). Cognitive apprenticeship: Teaching the crafts of reading, writing, and mathematics. In L. B. Resnick (Ed.), Knowing, learning, and instruction (pp. 453–494). Erlbaum.',gist:'やって見せる → 支えながらやらせる → 支えを外す → 言葉にさせる。',line:'手本（考え方を声に出す）、支えながらの練習、支えを外して自分でやる場面、自分の言葉で説明する場面を、この順に入れてください。'},
+ bloom:{name:'ブルーム・タキソノミー改訂版',ref:'Anderson & Krathwohl, 2001',cite:'Anderson, L. W., & Krathwohl, D. R. (Eds.). (2001). A taxonomy for learning, teaching, and assessing: A revision of Bloom\'s taxonomy of educational objectives. Longman.（元の分類：Bloom, B. S. (Ed.). (1956). Taxonomy of educational objectives: Handbook I: Cognitive domain. David McKay.）',gist:'記憶・理解・応用・分析・評価・創造の6段階と、知識の種類（事実・概念・手続き・メタ認知）の二次元で、ねらいや問いが求める思考を見る。',line:'ねらい・問い・活動が、どの段階（記憶・理解・応用・分析・評価・創造）と、どの知識（事実・概念・手続き・メタ認知）にあたるかを示し、分析・評価・創造の段階を少なくとも1つ入れてください。'},
+ digital:{name:'デジタル・タキソノミー',ref:'Churches, 2008',cite:'Churches, A. (2008). Bloom\'s taxonomy blooms digitally. Tech & Learning. https://www.techlearning.com/news/bloom39s-taxonomy-blooms-digitally（実践者による整理。査読論文ではありません）',gist:'ブルームの6段階に、デジタルの活動（検索・タグづけ・共有・リンク・コメント・動画づくりなど）を対応させた整理。ICT を使う活動の案を出すときの手がかり。',line:'段階ごとに合うデジタルの活動（例：記憶＝検索・ブックマーク、理解＝タグづけ・注釈、応用＝編集・共有、分析＝リンクづけ・情報の確かめ、評価＝コメント・レビュー、創造＝動画・ポッドキャスト・プログラムづくり）を1つずつ提案し、ねらいに合うものを選んで理由を添えてください。'},
+ scaffold:{name:'足場かけ',ref:'Wood, Bruner, & Ross, 1976',cite:'Wood, D., Bruner, J. S., & Ross, G. (1976). The role of tutoring in problem solving. Journal of Child Psychology and Psychiatry, 17(2), 89–100.',gist:'一人では難しいことを、手がかりを渡してできるようにし、できたら外す。',line:'つまずいたときの手がかりを段階に分けて用意し、手がかりを外していく順番も示してください。'},
+ srl:{name:'自己調整学習',ref:'Zimmerman, 2002',cite:'Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. Theory Into Practice, 41(2), 64–70.',gist:'見通す → やってみる → ふり返るの循環を、学び手が自分で回す。',line:'最初に見通しを立てる場面と、最後にふり返る場面を入れ、何をふり返るかの問いを添えてください。'},
+ udl:{name:'学びのユニバーサルデザイン',ref:'CAST, 2024',cite:'CAST. (2024). Universal Design for Learning Guidelines version 3.0. https://udlguidelines.cast.org',gist:'はじめから多様な人が参加できるよう、受け取り方・取り組み方の選択肢を用意する。',line:'読み手・使い手の多様さを前提に、受け取り方や取り組み方の選択肢（見出し・図・ふりがな・書く以外の表し方など）を用意してください。'},
+ retrieval:{name:'検索練習',ref:'Roediger & Karpicke, 2006',cite:'Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. Psychological Science, 17(3), 249–255.',gist:'読み返すより、何も見ずに思い出すほうが、あとまで残る。',line:'資料や答えを見ずに思い出す問いを中心にしてください。'},
+ interleave:{name:'交互配置',ref:'Rohrer & Taylor, 2007',cite:'Rohrer, D., & Taylor, K. (2007). The shuffling of mathematics practice problems boosts learning. Instructional Science, 35(6), 481–498.',gist:'同じ型をまとめて解くより、違う型を混ぜて解くほうが、あとまで残る。',line:'同じ型の問題を続けず、違う型の問題を混ぜて並べてください。'},
+ feedback:{name:'フィードバック',ref:'Hattie & Timperley, 2007',cite:'Hattie, J., & Timperley, H. (2007). The power of feedback. Review of Educational Research, 77(1), 81–112.',gist:'「どこへ向かうか・いまどこか・次に何をするか」に答えるフィードバックが効く。',line:'規準ごとに「目指す姿」「いまの姿の見取り方」「次の一歩につながる声かけ」を対応させてください。'},
+ sdt:{name:'自己決定理論',ref:'Ryan & Deci, 2000',cite:'Ryan, R. M., & Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist, 55(1), 68–78.',gist:'選べる（自律性）・できる（有能感）・つながる（関係性）が意欲を支える。',line:'参加する人が選べる場面、できたと感じられる場面、互いにつながる場面を入れ、命令や押しつけの言い方を避けてください。'},
+ implint:{name:'実行意図',ref:'Gollwitzer, 1999',cite:'Gollwitzer, P. M. (1999). Implementation intentions: Strong effects of simple plans. American Psychologist, 54(7), 493–503.',gist:'目標だけでなく「〇〇になったら、〇〇する」と状況と行動を結ぶと、始めやすい。',line:'読み手や参加者が「〇〇になったら、〇〇する」の形で、次の行動を1つ決められる形で結んでください。'},
+ cogload:{name:'認知負荷',ref:'Sweller, 1988',cite:'Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), 257–285.',gist:'一度に処理する情報が多すぎると、理解や行動の妨げになる。',line:'伝えることを絞り、大事な情報を先に置き、1文を短くして、読み手が一度に覚えることを減らしてください。'},
+ premortem:{name:'事前検死（プレモーテム）',ref:'Klein, 2007',cite:'Klein, G. (2007). Performing a project premortem. Harvard Business Review, 85(9), 18–19.',gist:'「うまくいかなかった」と仮定して原因を先に出すと、見落としに気づきやすい。',line:'最初に「これがうまくいかなかったとしたら、原因は何か」を5つ挙げ、それぞれの手当てを入れてください。'},
+ guskey:{name:'教師の変容',ref:'Guskey, 2002',cite:'Guskey, T. R. (2002). Professional development and teacher change. Teachers and Teaching: Theory and Practice, 8(3), 381–391.',gist:'実践して効果を自分の目で見たあとに、考え方が変わる。',line:'説明より先に、参加者が実際に試して結果を見る時間を置き、考えを話し合うのはそのあとにしてください。'}
+};
+const LENSES={A01:['ubd','bloom','digital','cogapp'],A02:['bloom','digital','scaffold'],A03:['srl','udl','bloom','digital'],B01:['retrieval','interleave','bloom'],B02:['ubd','feedback'],C01:['sdt','scaffold'],D01:['implint','cogload'],D02:['cogload','udl'],E01:['premortem','implint'],E02:['sdt','premortem'],F01:['cogapp','guskey','bloom'],F02:['retrieval','srl']};
+const lensesOf=task=>(LENSES[task.id]||[]).map(k=>Object.assign({key:k},THEORIES[k])).filter(t=>t.name);
+const selectedLenses=()=>lensesOf(current).filter(t=>{const b=document.getElementById('lens-'+t.key);return b&&b.checked;});
+function renderLenses(){
+ const box=$('lenses');box.replaceChildren();
+ for(const t of lensesOf(current)){
+  const label=document.createElement('label'),input=document.createElement('input'),span=document.createElement('span'),small=document.createElement('small');
+  input.type='checkbox';input.id='lens-'+t.key;input.addEventListener('change',()=>{hasCustom=true;invalidate();});
+  span.textContent=t.name+'（'+t.ref+'）';small.textContent=t.gist;span.append(small);label.append(input,span);box.append(label);
+ }
+}
 // [S2] 入力はこの画面だけ。ストレージ・通信・外部AIは使用しない。
 const $=id=>document.getElementById(id);
 let current=TASKS.find(t=>t.id===CONFIG.defaultTask),hasCustom=false,copyEpoch=0;
@@ -117,6 +148,7 @@ function renderSource(){
  box.append(sourceText('AI活用案：'+current.exampleType+'。'+(current.match||'標準職務を手がかりにした講師の案です。')));
  if(current.match)box.append(link('生成AIガイドライン・Box-4（本文14ページ）',SOURCES.ai));
  if(current.sharing)box.append(sourceText(current.sharing),link('業務の分担・負担軽減の指針',SOURCES.sharing));
+ const lenses=lensesOf(current);if(lenses.length){box.append(sourceText('理論の視点の出典（設計の手がかり。効果を保証するものではありません）：'));for(const t of lenses)box.append(sourceText('・'+t.name+'：'+t.cite));}
  box.append(sourceText('操作用の分類・具体的なプロンプトは独自案です。効果を保証するものではありません。確認日：'+CONFIG.date+'。'));
 }
 function invalidate(){
@@ -136,7 +168,7 @@ function selectTask(id,force=false){
  $('detail-label').textContent=task.detailLabel+'（任意・150字まで）';$('detail').placeholder=task.detail;
  $('detail-hint').textContent=task.id==='F02'?'資料本文がないときは、AIに提供を求めてもらいます。':'未記入の条件は、質問するか［要確認］として残します。';
  document.querySelectorAll('[data-task]').forEach(b=>{const selected=b.dataset.task===task.id;b.setAttribute('aria-pressed',String(selected));b.querySelector('.mark').textContent=selected?'✓':'○';});
- renderSource();renderSkill();$('checks').replaceChildren(...task.checks.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
+ renderLenses();renderSource();renderSkill();$('checks').replaceChildren(...task.checks.map(text=>{const li=document.createElement('li');li.textContent=text;return li;}));
  $('followup').textContent='この下書きを、目的に合うようにもう一度見直してください。要点を一つ絞り、直した理由も短く示してください。未確認の事実は補わず、［要確認］を残してください。';
  invalidate();
 }
@@ -144,8 +176,10 @@ function selectTask(id,force=false){
 const RULES=['実在の児童生徒の氏名・成績・出欠・健康・指導や相談の記録・家庭状況、校内の未公開情報は求めないでください。質問する場合にも同じです。','実在の個人の採点・評定・診断・個別の対応方針の決定は行わないでください。','日付・連絡先・学校の決定事項など、不明な事実は補わず［要確認］としてください。','根拠を確認できない統計・引用・出典を作らないでください。資料を読めない場合は、そのことを明示してください。','事実、提案、推測を区別してください。引用や具体的な根拠は、確認できる資料と箇所を示してください。','最後に、教員が確かめる点を短く示してください。教員が内容・表現・根拠を確認し、最終的に判断して仕上げます。'];
 function makePrompt(){
  const entries=[['仕事',current.name],['作ってほしいもの',choice('product')],['対象',choice('audience')],['学校・学年',choice('grade')||'未指定。必要なら確認する'],['テーマ',field('theme')],['目的',field('goal')||'未指定。必要なら確認する'],[current.detailLabel,field('detail')||'未指定。必要なら確認する'],['分量の目安',choice('length')],['伝え方',choice('tone')],['追加の条件',field('extra')||'なし']];
+ const lenses=selectedLenses();if(lenses.length)entries.push(['理論の視点',lenses.map(t=>t.name+'（'+t.ref+'）').join('、')]);
+ const lensPart=lenses.length?['','【理論の視点】',...lenses.map(t=>'・'+t.name+'（'+t.ref+'）：'+t.line),'選んだ視点を、出力のどこに効かせたかを最後に1行で説明してください。']:[];
  const mode=$('ask').checked?'書き始める前に、不足する条件があれば初回は最大3問で質問してください。条件が足りていれば下書きへ進んでください。':'確認が必要な点は［要確認］として残し、分かる範囲で下書きを作ってください。不明な条件を推測で埋めないでください。';
- return ['あなたは、教員の仕事の準備と文章づくりを支援するアシスタントです。','以下の条件で、教員が編集・確認できるたたき台を作ってください。','',...entries.map(([key,value])=>'【'+key+'】'+value),'','【この仕事で大切にすること】',current.guide,'','【対話の進め方】',mode,'','【情報の扱いと確認】','この依頼は、公開情報・架空の条件による練習です。',...RULES].join('\n');
+ return ['あなたは、教員の仕事の準備と文章づくりを支援するアシスタントです。','以下の条件で、教員が編集・確認できるたたき台を作ってください。','',...entries.map(([key,value])=>'【'+key+'】'+value),'','【この仕事で大切にすること】',current.guide,...lensPart,'','【対話の進め方】',mode,'','【情報の扱いと確認】','この依頼は、公開情報・架空の条件による練習です。',...RULES].join('\n');
 }
 // [S3b] スキルにする。Gemini のスキルは名前（英小文字とハイフン）・説明・指示。画面の自由記述は入れない。
 const SKILL_SLUG={A01:'jugyo-wo-kumu',A02:'hatsumon',A03:'worksheet',B01:'kakunin-mondai',B02:'hyoka-kijun',C01:'gakkyu-katsudo',D01:'gakkyu-dayori',D02:'annai-bun',E01:'gyoji-junbi',E02:'kaigi-ronten',F01:'konai-kenshu',F02:'shiryo-yomitoki'};
@@ -163,8 +197,10 @@ function skillParts(){
   '6. '+current.detailLabel+'：自由に答えてもらう（例：'+current.detail+'）。なければ飛ばす',
   '7. 分量の目安：'+opts('length')+'［おすすめ：'+current.length+'］',
   '8. 伝え方：'+opts('tone')+'［おすすめ：'+optionValues('tone')[0]+'］',
+  '9. 理論の視点：'+lensesOf(current).map(t=>t.name+'（'+t.ref+'）').concat('使わない').join('／')+'［おすすめ：'+(lensesOf(current)[0]||{name:'使わない'}).name+'］',
   '聞き終えたら、条件を短くまとめて確かめてから、たたき台を作ってください。',
   '','【この仕事で大切にすること】',current.guide,
+  '','【理論の視点を選ばれたとき】',...lensesOf(current).map(t=>'・'+t.name+'（'+t.ref+'）：'+t.line),'選ばれた視点を、出力のどこに効かせたかを最後に1行で説明してください。',
   '','【情報の扱いと確認】','このスキルは、公開情報・架空の条件で使います。',...RULES].join('\n');
  const chat=['次の指示をもとに、Gemini のスキルを作ってください。','名前：'+name,'説明：'+desc,'','【指示】',inst].join('\n');
  return {name,desc,inst,chat};
@@ -187,7 +223,7 @@ function generate(focusError=true){
 function loadExample(){
  if(hasCustom&&!window.confirm('入力した条件を、選んでいる仕事の架空例に置き換えますか？'))return;
  $('form').reset();$('audience').value=current.audience;$('length').value=current.length;$('grade').value='中学校1年';
- ['theme','goal','detail'].forEach(id=>$(id).value=current[id]);hasCustom=true;generate();
+ ['theme','goal','detail'].forEach(id=>$(id).value=current[id]);const first=lensesOf(current)[0];if(first)$('lens-'+first.key).checked=true;hasCustom=true;generate();
 }
 // [S4] コピーが拒否されたら、現在の文を選択できる欄へ戻す。
 async function copy(text,kind){
