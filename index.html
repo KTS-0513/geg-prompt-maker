@@ -54,7 +54,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 <li><a href="#flow"><span class="no">流</span>今日の流れ</a></li>
 <li><a href="#why"><span class="no">理</span>考え方</a></li>
 <li><a href="#s0"><span class="no">0</span>準備</a></li>
-<li><a href="#s1"><span class="no">1</span>洗い出す</a></li>
+<li><a href="#s1"><span class="no">1</span>深掘る</a></li>
 <li><a href="#s2"><span class="no">2</span>調べる</a></li>
 <li><a href="#s3"><span class="no">3</span>作る</a></li>
 <li><a href="#s4"><span class="no">4</span>スキルにする</a></li>
@@ -70,8 +70,8 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 <div class="head"><span class="no">流</span><h2>今日の流れ</h2></div>
 <table>
 <tr><th>20:00</th><td>はじめに（自己紹介・GEG Asahikawa の紹介・問い）</td></tr>
-<tr><th>20:08</th><td><b>手順1・2</b>　任せたい仕事を洗い出し、Deep Research を始める</td></tr>
-<tr><th>20:13</th><td>お話：養護教諭の研修3回から見えたこと（調べている間に聞いてください）</td></tr>
+<tr><th>20:06</th><td><b>手順1・2</b>　困りごとを深掘り、その困りごとを Deep Research で調べ始める</td></tr>
+<tr><th>20:14</th><td>お話：養護教諭の研修3回から見えたこと（調べている間に聞いてください）</td></tr>
 <tr><th>20:28</th><td><b>手順3・4</b>　調べた結果から、プロンプトメーカーを作る → スキルにする</td></tr>
 <tr><th>20:45</th><td><b>手順5</b>　共有（チャット欄に1行）</td></tr>
 <tr><th>20:53</th><td>まとめ・次回の予告</td></tr>
@@ -99,7 +99,9 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </table>
 <h3>プロンプトメーカーに入れる理論</h3>
 <table>
-<tr><th>作り方</th><td>Deep Research に「この仕事に効く理論」を出典つきで調べさせ、「理論の視点」として選べるボタンにする（手順2・3）</td></tr>
+<tr><th>困りごとの聞き方</th><td>最近の具体的な場面を1つ（クリティカル・インシデント法：Flanagan, 1954）→ いまとあるべき姿の差（ニーズ分析：Rossett, 1987）→ 手順と条件（課題分析：Jonassen et al., 1999）。くり返す・条件が変わる・形が決まっている仕事かを見分ける（Rossett &amp; Schafer, 2007）</td></tr>
+<tr><th>調べ方</th><td>その困りごとだけを、公的資料・査読論文・書籍・実践報告に分けて調べさせ、根拠のラベルを付ける。確かめられないものは使わない（手順2）</td></tr>
+<tr><th>作り方</th><td>報告の最後の「条件の表」と「理論の視点」をそのままボタンにし、「先生が確かめる点」を頼み方の下に出す（手順3）</td></tr>
 <tr><th>活動の段階</th><td>授業・教材の仕事では、ねらいや問いの思考の高さをブルーム・タキソノミー改訂版（Anderson &amp; Krathwohl, 2001）で見て、段階に合う ICT の活動案をデジタル・タキソノミー（Churches, 2008）から出す</td></tr>
 <tr><th>書く前に質問</th><td>足場かけ（Wood, Bruner, &amp; Ross, 1976）。11/16 の研修で全員が「できるようになった」と答えた頼み方</td></tr>
 <tr><th>どこに効かせたか1行</th><td>理由が見える形にする（明確化）。道具に頼りきって理由が分からなくなるのを防ぐ</td></tr>
@@ -124,129 +126,112 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </section>
 
 <section id="s1">
-<div class="head"><span class="no">1</span><h2>任せたい仕事を洗い出す</h2><span class="time">2分</span></div>
+<div class="head"><span class="no">1</span><h2>困りごとを深掘る</h2><span class="time">5分</span></div>
 <ol class="do">
-<li>下の文をコピーし、<span class="fill">〔　〕</span>を自分のことに書き換えて、Gemini に送ります。</li>
-<li>出てきた10個のうち、おすすめの3つを確かめます。自分の学校と違うものは入れ替えてかまいません。</li>
-<li>3つの仕事を決めて、手順2へ。</li>
+<li>Gemini で新しいチャットを開き、下の文をコピーして、<span class="fill">〔　〕</span>を自分のことに書き換えて送ります。</li>
+<li>Gemini が4つの質問を1つずつしてきます。<b>音声入力</b>（入力欄のマイク）で答えると速いです。子どもの名前や個別のことは話さず、「よくある形」で答えます。</li>
+<li>最後に出る「<b>手順2に貼るメモ</b>」をコピーしておきます。</li>
 </ol>
 <div class="prompt"><div class="prompt-head">手順1の頼み方<button type="button" data-copy="p1">コピー</button></div>
-<pre id="p1">わたしは〔職種〕です（〔校種〕）。
-わたしの仕事で、AI に手伝ってもらえそうなものを10個、次の表にしてください。
-| 仕事 | どのくらいの頻度 | AI に任せられる部分 | 自分が持つ部分（判断・確認） |
-
-そのあと、「くり返しある」「毎回、相手や条件を少し変えて頼む」「できあがりの形がだいたい決まっている」
-の3つに当てはまるものを3つ選び、理由を1行ずつ添えてください。
-
-子どもの名前・健康の情報・個別の事例は例に入れないでください。
-AI に任せるのは下書き・案出し・整理までです。</pre></div>
-<p class="status" role="status" aria-live="polite"></p>
-<details><summary>時間があるときの「じっくり版」（Gemini が先に質問してくれる）</summary>
-<div class="prompt"><div class="prompt-head">じっくり版<button type="button" data-copy="p1b">コピー</button></div>
-<pre id="p1b">あなたは、学校の先生の仕事を一緒に見直すパートナーです。
-わたしの仕事の中から「AI に手伝ってもらえそうな仕事」を洗い出したいです。
-
-【わたしについて】
-・職種：〔例：養護教諭／学級担任／事務職員／教務主任〕
-・校種：〔例：小学校〕
-・ひとこと（なくてもよい）：〔例：1人職。毎月の便りと集計に時間がかかる〕
-
-【進め方】
-1. すぐに答えを出さず、まず、わたしの仕事を知るための質問をしてください。
-   質問は1回に1つずつ、全部で5つまでにしてください。
-2. 質問が終わったら、AI に手伝ってもらえそうな仕事を10個、次の表にまとめてください。
-   | 仕事 | どのくらいの頻度 | AI に任せられる部分 | 自分が持つ部分（判断・確認） |
-3. 最後に、10個の中から「頼み方の型にしておくと効きそうな仕事」を3つ選び、理由を1行ずつ添えてください。
-   選ぶ目安は次の3つです。
-   ・くり返しある（毎月・毎学期・毎年）
-   ・毎回、相手や条件を少し変えて頼む
-   ・できあがりの形がだいたい決まっている
-
-【守ること】
-・子どもの名前・健康の情報・個別の事例は、わたしも書きません。あなたも例に入れないでください。
-・AI に任せるのは「下書き・案出し・整理」までです。使うかどうかは、わたしが決めます。
-・分からないことは、分からないと言ってください。</pre></div>
-<p class="status" role="status" aria-live="polite"></p>
-</details>
-</section>
-
-<section id="s2">
-<div class="head"><span class="no">2</span><h2>Deep Research で調べる</h2><span class="time">始めるまで3分・調べるのに10分前後</span></div>
-<ol class="do">
-<li>Gemini で<b>新しいチャット</b>を開き、入力欄の「ツール」から <b>Deep Research</b> を選びます。</li>
-<li>下の文をコピーし、手順1で決めた3つの仕事を<span class="fill">〔　〕</span>に入れて送ります。</li>
-<li>調べる計画が出たら、<b>「リサーチを開始」</b>を押します（押さないと始まりません）。</li>
-<li>調べている間は、お話を聞いてください。終わったら、レポートを<b>ドキュメントに書き出して</b>おきます（あとで読み返す・同僚に渡すため）。</li>
-</ol>
-<div class="prompt"><div class="prompt-head">手順2の頼み方<button type="button" data-copy="p2">コピー</button></div>
-<pre id="p2">次の仕事について、日本の学校の先生の立場で徹底的に調べ、レポートにまとめてください。
-このレポートは、あとで「選ぶだけで AI への頼み方ができるアプリ（プロンプトメーカー）」を作る材料にします。
+<pre id="p1">あなたは、学校の先生の「困りごと」を一緒に掘り下げる聞き手です。
+最後に、この困りごとを助ける「プロンプトメーカー（選ぶだけで AI への頼み方ができるアプリ）」を作るための調査メモを書いてもらいます。
 
 【わたし】
 職種：〔例：養護教諭〕／校種：〔例：小学校〕
 
-【調べる仕事（3つ）】
-1. 〔手順1で選んだ仕事〕
-2. 〔　　〕
-3. 〔　　〕
+【進め方】
+すぐに答えを出さず、次の4つを、1回に1つずつ質問してください。
+1. 最近「時間がかかった」「毎回悩む」と感じた仕事の場面を1つ（何を作ったか・どこで手が止まったか）
+2. その仕事が、本当はどうなっていてほしいか（いまとの差）
+3. その仕事の手順と、毎回変わる条件（相手・時期・分量など）
+4. どこまでを AI に任せ、どこを自分で判断したいか
+
+【質問が終わったら】次の形でまとめてください。
+■ 困りごと（1〜2文）
+■ プロンプトメーカーにする仕事（1つ）と、向いている理由
+  （「くり返しある」「毎回、条件を少し変えて頼む」「できあがりの形がだいたい決まっている」に当てはまるか。当てはまらなければ、そう書く）
+■ その仕事の手順と、頼むときに決める条件の候補
+■ 調べたいこと（3つ。「〜には何が効くか」「〜で失敗しやすいのはどこか」の形）
+■ 手順2に貼るメモ（職種・校種／困りごと／理想の状態／手順／変わる条件／AI に任せる範囲／自分で判断する範囲／調べたいこと を、【 】の見出しつきで12行以内で）
+
+【守ること】
+・子どもの名前・健康の情報・個別の事例・校内の未公開情報は聞かないでください。場面は「よくある形」で答えてもらいます。
+・答えが短くても、推測で埋めないでください。</pre></div>
+<p class="status" role="status" aria-live="polite"></p>
+<p class="note">答えのあとに「次のステップとして…」という提案ボタンが出ても、押さずに手順2へ進みます。<br>質問は、一般論ではなく「最近の具体的な場面」から聞く形にしています（クリティカル・インシデント法：Flanagan, 1954）。いまとあるべき姿の差（ニーズ分析：Rossett, 1987）、手順と条件（課題分析：Jonassen et al., 1999）の順に聞き、条件がそのままアプリのボタンになります。</p>
+</section>
+
+<section id="s2">
+<div class="head"><span class="no">2</span><h2>その困りごとを調べる</h2><span class="time">Deep Research：約10分／Google で検索：約1分</span></div>
+<ol class="do">
+<li>新しいチャットを開き、入力欄の「<b>＋</b>」→「<b>その他のツール</b>」→「<b>Deep Research</b>」を選びます。</li>
+<li>下の文をコピーし、<span class="fill">〔手順1の「手順2に貼るメモ」をここに貼る〕</span>のところに、手順1のメモを貼って送ります。<b>送る前に、〔　〕が残っていないか確かめます</b>（1回きりです）。</li>
+<li>調べる計画が出たら、<b>「リサーチを開始」</b>を押します。調べている間は、お話を聞いてください。</li>
+<li>終わったら、報告の画面の「<b>エクスポートのメニュー</b>」→「<b>Google ドキュメントにエクスポート</b>」で書き出しておきます（読み返す・同僚に渡すため）。</li>
+</ol>
+<p class="rule"><strong>Deep Research は、学校のアカウントでは1日1回までです。</strong><br>今日もう使った人・断られた人は、新しいチャットで「＋」→「<b>Google で検索</b>」を付けて、<b>同じ文</b>を送ります（約1分で出典つきの報告が出ます）。</p>
+<div class="prompt"><div class="prompt-head">手順2の頼み方<button type="button" data-copy="p2">コピー</button></div>
+<pre id="p2">次の【わたしの困りごと】を助ける「プロンプトメーカー（選ぶだけで AI への頼み方ができるアプリ）」を作るために、理論と先行研究にもとづいて調べ、レポートにまとめてください。
+感覚や一般論ではなく、根拠のある知見を集めてください。
+
+【わたしの困りごと】
+〔手順1の「手順2に貼るメモ」をここに貼る〕
+
+【調べること】
+1. この仕事の目的と、根拠になる公的な資料（法令・通知・ガイドライン・学習指導要領・手引き）
+2. 先行研究：この仕事（または近い仕事）で、よい出来上がりの条件や、効果があったやり方を調べた研究・実践報告
+3. 理論：この困りごとに効く学習理論・教育心理学・教育工学を2〜3個
+   （健康にかかわる仕事なら健康行動の理論、授業や教材にかかわる仕事ならブルーム・タキソノミー改訂版とデジタル・タキソノミーも）
+   それぞれ、要点と、頼み方のどの条件にどう効くか
+4. よくある失敗と、先生が必ず確かめること
 
 【調べ方】
-・文部科学省・教育委員会などの公的な資料（通知・ガイドライン・学習指導要領・手引き）を優先してください。
-・出典には、資料名・発行者・発行年月・URL を付けてください。確かめられないことは「未確認」と書いてください。
-・2024年以降の情報を優先し、古い情報には年を書いてください。
-・理論の出典は、著者・年・題名・誌名（巻・号・ページ）または書名・出版社と、DOI か公式のページを付けてください。解説サイトだけを出典にしないでください。
+・公的な資料は、文部科学省・国立教育政策研究所・教育委員会を優先してください。
+・先行研究は、J-STAGE・CiNii Research・ERIC・Google Scholar などで探し、査読つきの論文を優先してください。
+・出典には、著者（発行者）・年・題名・誌名（巻・号・ページ）または書名と、URL か DOI を付けてください。
+・それぞれの根拠に〔公的資料〕〔査読論文〕〔書籍〕〔実践報告〕のラベルを付けてください。確かめられないものは使わず「未確認」と書いてください。出典や DOI を作らないでください。
+・2020年以降を優先し、古い資料には年を書いてください。
 
-【レポートの章立て】仕事ごとに、次の7つを書いてください。
-1. この仕事の目的と、根拠になる資料
-2. よい出来上がりに入っている要素
-3. 読み手・場面による違い
-4. 気をつけること（よくある失敗・個人情報・学校が決めること）
-5. AI に任せられる部分と、先生が判断する部分
-6. 頼むときに決める条件と選択肢の表
-   | 条件 | 選択肢（3〜6個） | 迷ったときのおすすめ | 理由 |
-   （例：読み手｜保護者／子ども／職員／地域）
-   表の最後の行は「理論の視点」とし、選択肢は7で挙げた理論にしてください。
-7. この仕事に効く理論（2〜3個）
-   学習理論・学習方略・教育工学・教育心理学（健康にかかわる仕事なら健康行動の理論も）から選び、
-   授業や教材にかかわる仕事なら、ブルーム・タキソノミー改訂版とデジタル・タキソノミーで、活動の段階とデジタルの活動案も整理し、
-   要点を1〜2文で、頼み方のどの条件にどう効くかを1文で書いてください。
-
-最後に、3つの仕事に共通する「頼むときの注意」を5つまでにまとめてください。
+【レポートの最後に、必ず付けるもの】（次の手順でアプリの材料にします）
+A. 作ってほしいものの種類（2〜3個）
+B. 頼むときに決める条件と選択肢の表
+   | 条件 | 選択肢（3〜6個） | 迷ったときのおすすめ | 根拠（上の番号） |
+   表の最後の行は「理論の視点」とし、選択肢は3の理論にしてください。
+C. 理論の視点の一覧：理論名・要点（1文）・頼み方に入れる一文・出典
+D. 先生が確かめる点（3〜5個）
 
 子どもの名前・健康の情報・個別の事例は、例にも入れないでください。</pre></div>
 <p class="status" role="status" aria-live="polite"></p>
-<p class="note">ポイントは章立ての6番「条件と選択肢の表」と7番「この仕事に効く理論」です。表がアプリのボタンに、理論が「理論の視点」のボタンになります。<br>レポートの出典にも誤りはあります。使う内容は、出典を開いて先生が確かめます。</p>
+<p class="note">ポイントは、報告の最後の A〜D です。A（作るもの）・B（条件の表）・C（理論の視点）・D（先生が確かめる点）が、手順3のアプリの材料になります。<br>根拠には〔公的資料〕〔査読論文〕〔書籍〕〔実践報告〕のラベルが付きます。報告の出典にも誤りはあります。使う内容は、出典を開いて先生が確かめます。</p>
 </section>
 
 <section id="s3">
-<div class="head"><span class="no">3</span><h2>プロンプトメーカーを作る</h2><span class="time">12分</span></div>
+<div class="head"><span class="no">3</span><h2>プロンプトメーカーを作る</h2><span class="time">10分</span></div>
 <ol class="do">
-<li><b>Deep Research と同じチャットの続き</b>で、入力欄の「ツール」から <b>Canvas</b> を選びます。</li>
-<li>下の文をコピーし、<span class="fill">〔職種〕</span>を書き換えて送ります。1〜2分でアプリができます。</li>
-<li>「理論の視点」を1つ選び、架空の条件でボタンを押して、頼み方が出るか試します。出た頼み方を新しいチャットに貼って、下書きが返るか確かめます。</li>
-<li>直したいところは、そのまま Gemini に頼みます（例：「ボタンの文字を大きく」「仕事を1つ足して」）。</li>
+<li><b>手順2と同じチャットの続き</b>で、入力欄の「＋」→「その他のツール」→「<b>Canvas</b>」を選びます。</li>
+<li>下の文をコピーし、<span class="fill">〔仕事の名前〕</span>を書き換えて送ります。1〜2分でアプリができます。</li>
+<li>条件と「理論の視点」を選び、頼み方が出るか試します。出た頼み方を新しいチャットに貼って、下書きが返るか確かめます。</li>
+<li>直したいところは、そのまま Gemini に頼みます（例：「ボタンの文字を大きく」「条件を1つ足して」）。</li>
 </ol>
 <div class="prompt"><div class="prompt-head">手順3の頼み方<button type="button" data-copy="p3">コピー</button></div>
-<pre id="p3">このレポートをもとに、Canvas で「〔職種〕の仕事 プロンプトメーカー」を作ってください。
+<pre id="p3">このレポートの最後の A〜D をもとに、Canvas で「〔仕事の名前〕 プロンプトメーカー」を作ってください。
 1つの HTML ファイルで動くアプリにしてください。
 
 【画面の流れ】
-1. 仕事を選ぶ：レポートの3つの仕事をカードで並べる。
-   カードに「根拠を見る」を付け、レポートの資料名と URL、理論の出典（著者・年・題名）を出す。
-2. 作ってほしいものを選ぶ：仕事ごとに2〜3個（例：本文案／構成案／見直しの観点）。
-3. 条件を選ぶ：レポートの「頼むときに決める条件と選択肢の表」を、そのままボタンにする。
-   「迷ったときのおすすめ」を最初から選んでおく。表に無い条件は足さない。
-   自由に書ける欄を1つだけ付ける（例：テーマ）。
-   表の「理論の視点」は、1〜2個まで選べるボタンにし、選んだ理論の要点を小さく表示する。
-4. 「プロンプトを作る」を押すと、頼み方が出る。選んだ理論は【理論の視点】として頼み方に入れる。「コピー」ボタンを付ける。
-   コピーできないときは、文を全部選んだ状態にして「長押し（Ctrl+C）でコピー」と出す。
-5. 「スキルにする」：選んだ仕事を Gemini のスキルにするための文を、3つの形で出す。
-   ・チャットで作る：「次の指示をもとにスキルを作ってください。」で始まる1つの文
-   ・手動で作る：名前（英小文字とハイフン。例 hoken-dayori）／説明（1〜2文）／指示 を、欄ごとにコピーできるようにする
+1. 作ってほしいもの（A）を選ぶ。
+2. 条件を選ぶ：B の表を、そのままボタンにする。「迷ったときのおすすめ」を最初から選んでおく。表に無い条件は足さない。自由に書ける欄を1つだけ付ける。
+3. 理論の視点（C）を、1〜2個まで選べるボタンにする。選ぶと、要点と出典を小さく表示する。
+4. 「プロンプトを作る」を押すと、頼み方が出る。選んだ理論は【理論の視点】という見出しの下に、C の「頼み方に入れる一文」で入れる。
+   「コピー」ボタンを付ける。コピーできないときは、文を全部選んだ状態にして「長押し（Ctrl+C）でコピー」と出す。
+5. 頼み方の下に「先生が確かめる点」（D）をチェックリストで出す。
+6. 「根拠を見る」：レポートの出典を、〔公的資料〕〔査読論文〕などのラベルつきで一覧にする。
+7. 「スキルにする」（Gem ではありません）：この仕事を Gemini のスキルにするための文を、3つの形で出す。
+   ・チャットで作る：「次の指示をもとにスキルを作ってください。」で始まる1つの文（この書き出しは言い換えない）
+   ・手動で作る：名前（英小文字とハイフン）／説明（1〜2文）／指示 を、欄ごとにコピーできるようにする
    ・スキルの画面が出ない人へ：「指示の文をドキュメントか Keep に保存しておけば、次から貼るだけで使えます」と添える
-   スキルの指示は「3で選ぶ条件（理論の視点も）を、Gemini が1つずつ質問してから下書きを作る」形にする。
+   スキルの指示は「2・3で選ぶ条件と理論の視点を、Gemini が1つずつ質問してから下書きを作る」形にする。
 
-【頼み方（プロンプト）とスキルの指示に、必ず入れる文】
+【頼み方とスキルの指示に、必ず入れる文】
 ・書き始める前に、足りない条件があれば3つまで質問してください。
 ・子どもの名前・健康の情報・個別の事例・校内の未公開情報は求めないでください。
 ・日付や学校の決定事項など、分からない事実は補わず［要確認］としてください。
@@ -260,7 +245,7 @@ AI に任せるのは下書き・案出し・整理までです。</pre></div>
 ・スマホの幅でも横にはみ出さない。文字は16px以上、ボタンは押しやすい大きさにする。
 ・言葉はやさしい日本語にする。画面のいちばん下に「下書きを使うかどうかは、先生が決めます」と出す。</pre></div>
 <p class="status" role="status" aria-live="polite"></p>
-<p class="note">チャットを閉じてしまったときは、新しいチャットで「＋」→ ドライブから、書き出したドキュメントを付けてから貼ります。</p>
+<p class="note">チャットを閉じてしまったときは、新しいチャットで「＋」→「ドライブ」から、書き出したドキュメントを付けてから貼ります。</p>
 </section>
 
 <section id="s4">
@@ -286,10 +271,11 @@ AI に任せるのは下書き・案出し・整理までです。</pre></div>
 <section id="help">
 <div class="head"><span class="no">?</span><h2>困ったとき</h2></div>
 <table>
-<tr><th>Deep Research が選べない・回数切れ</th><td>講師がチャット欄に貼る「見本のレポート」を開き、その中身を新しいチャットに貼ってから手順3へ。</td></tr>
+<tr><th>Deep Research が「1日1件を使いました」と出る・断られる</th><td>新しいチャットで「＋」→「Google で検索」を付けて、手順2の同じ文を送ります（約1分）。</td></tr>
 <tr><th>計画が出たまま進まない</th><td>「リサーチを開始」を押します。</td></tr>
-<tr><th>調べ終わらないうちに手順3の時間になった</th><td>見本のレポートで手順3を体験し、自分のレポートができたら、あとで同じ文を貼れば同じように作れます。</td></tr>
-<tr><th>Canvas が選べない</th><td><a href="example/" target="_blank" rel="noopener">見本のアプリ</a>で、条件を選ぶ → 頼み方 → スキルにする、の流れを体験します。</td></tr>
+<tr><th>調べ終わらないうちに手順3の時間になった</th><td>講師がチャット欄に貼る「見本のレポート」で手順3を体験します。自分の報告ができたら、あとで同じ文を貼れば同じように作れます。</td></tr>
+<tr><th>手順1の答えに「次のステップ」の提案が出た</th><td>押さずに、「手順2に貼るメモ」をコピーして手順2へ。メモが出ていなければ「手順2に貼るメモを出して」と送ります。</td></tr>
+<tr><th>Canvas がアプリを作らない</th><td>入力欄の上に「Canvas」が付いているか確かめます。付いていれば、左上のモデルを「詳細なリサーチ」に切り替えてもう一度。それでもだめなら<a href="example/" target="_blank" rel="noopener">見本のアプリ</a>で流れを体験します。</td></tr>
 <tr><th>スキルの画面が出ない</th><td>手順4の C（ドキュメントか Keep に保存）。</td></tr>
 <tr><th>コピーできない</th><td>文を長押し（パソコンは選んで Ctrl+C）でコピーします。</td></tr>
 </table>
@@ -304,10 +290,12 @@ AI に任せるのは下書き・案出し・整理までです。</pre></div>
 <li>CAST. (2024). <i>Universal Design for Learning Guidelines</i> version 3.0. https://udlguidelines.cast.org</li>
 <li>Churches, A. (2008). Bloom's taxonomy blooms digitally. <i>Tech &amp; Learning</i>.（実践者による整理）</li>
 <li>Collins, A., Brown, J. S., &amp; Newman, S. E. (1989). Cognitive apprenticeship: Teaching the crafts of reading, writing, and mathematics. In L. B. Resnick (Ed.), <i>Knowing, learning, and instruction</i> (pp. 453–494). Erlbaum.</li>
+<li>Flanagan, J. C. (1954). The critical incident technique. <i>Psychological Bulletin, 51</i>(4), 327–358.</li>
 <li>Gery, G. J. (1991). <i>Electronic performance support systems</i>. Weingarten Publications.</li>
 <li>Gollwitzer, P. M. (1999). Implementation intentions: Strong effects of simple plans. <i>American Psychologist, 54</i>(7), 493–503.</li>
 <li>Guskey, T. R. (2002). Professional development and teacher change. <i>Teachers and Teaching: Theory and Practice, 8</i>(3), 381–391.</li>
 <li>Hattie, J., &amp; Timperley, H. (2007). The power of feedback. <i>Review of Educational Research, 77</i>(1), 81–112.</li>
+<li>Jonassen, D. H., Tessmer, M., &amp; Hannum, W. H. (1999). <i>Task analysis methods for instructional design</i>. Lawrence Erlbaum Associates.</li>
 <li>Klein, G. (2007). Performing a project premortem. <i>Harvard Business Review, 85</i>(9), 18–19.</li>
 <li>Lave, J., &amp; Wenger, E. (1991). <i>Situated learning: Legitimate peripheral participation</i>. Cambridge University Press.</li>
 <li>Parasuraman, R., &amp; Riley, V. (1997). Humans and automation: Use, misuse, disuse, abuse. <i>Human Factors, 39</i>(2), 230–253.</li>
@@ -315,6 +303,7 @@ AI に任せるのは下書き・案出し・整理までです。</pre></div>
 <li>Roediger, H. L., III, &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <i>Psychological Science, 17</i>(3), 249–255.</li>
 <li>Rogers, E. M. (2003). <i>Diffusion of innovations</i> (5th ed.). Free Press.</li>
 <li>Rohrer, D., &amp; Taylor, K. (2007). The shuffling of mathematics practice problems boosts learning. <i>Instructional Science, 35</i>(6), 481–498.</li>
+<li>Rossett, A. (1987). <i>Training needs assessment</i>. Educational Technology Publications.</li>
 <li>Rossett, A., &amp; Schafer, L. (2007). <i>Job aids and performance support</i>. Pfeiffer.</li>
 <li>Ryan, R. M., &amp; Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. <i>American Psychologist, 55</i>(1), 68–78.</li>
 <li>Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <i>Cognitive Science, 12</i>(2), 257–285.</li>
