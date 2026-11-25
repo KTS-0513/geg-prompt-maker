@@ -5,69 +5,132 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <title>11/26 GEG Asahikawa 学習会｜今日の手順</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@800&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#202124;--muted:#5f6368;--line:#dadce0;--paper:#fff;--bg:#f8f9fa;--blue:#1a73e8;--red:#d93025;--yellow:#f9ab00;--green:#188038;--tint:#e8f0fe;--focus:#174ea6}
+:root{--blue:#4285F4;--red:#EA4335;--yellow:#FBBC04;--green:#34A853;--blue-d:#1A73E8;--red-d:#C5221F;--yellow-d:#F29900;--green-d:#188038;--paper:#FAFAF8;--white:#fff;--ink:#202124;--ink-mid:#3C4043;--muted:#5F6368;--faint:#80868B;--line:#DADCE0;--soft:#E8EAED;--focus:#1A73E8;
+--jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;--disp:"Anton","Noto Sans JP",sans-serif;--lab:"Archivo","Noto Sans JP",sans-serif;--c:var(--ink)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}html,body{min-height:100vh;min-height:100dvh}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.75;-webkit-text-size-adjust:100%}
-a{color:var(--blue);text-underline-offset:3px}a,p,li,td{overflow-wrap:anywhere}
-h1,h2,h3,p{margin:0}h1{font-size:clamp(22px,4.4vw,32px);line-height:1.4}h2{font-size:20px;line-height:1.5}h3{font-size:16px;margin:18px 0 6px}
-button{font:inherit;font-size:15px;min-height:44px;padding:8px 16px;border:1px solid var(--blue);border-radius:6px;background:var(--blue);color:#fff;cursor:pointer;touch-action:manipulation}
-button.sub{background:#fff;color:var(--blue)}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.bar{height:6px;display:grid;grid-template-columns:repeat(4,1fr)}.bar i:nth-child(1){background:var(--blue)}.bar i:nth-child(2){background:var(--red)}.bar i:nth-child(3){background:var(--yellow)}.bar i:nth-child(4){background:var(--green)}
-.wrap{max-width:880px;margin:auto;padding:24px 16px 64px}
-header{padding:8px 0 20px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em;margin-bottom:6px}
-.lead{margin-top:10px;color:var(--muted)}
-nav ol{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px}
-nav a{display:inline-flex;align-items:center;min-height:44px;gap:6px}
-.no{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:4px;background:var(--ink);color:#fff;font-size:13px;font-weight:700;padding:0 6px}
-section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px;margin-top:18px;scroll-margin-top:12px}
-.head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.time{font-size:13px;color:var(--muted);margin-left:auto;white-space:nowrap}
-.note{font-size:14px;color:var(--muted);margin-top:8px}
-.rule{border-left:4px solid var(--red);background:#fce8e6;padding:12px 14px;margin-top:18px;font-size:14px}
-table{border-collapse:collapse;width:100%;font-size:14px;margin-top:6px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}th{white-space:nowrap;color:var(--muted);font-weight:600}
-ol.do{padding-left:22px;margin:8px 0 0}ol.do li{margin:4px 0}
-.prompt{margin-top:12px;border:1px solid var(--line);border-radius:6px;background:#fbfbfb}
-.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;color:var(--muted)}
-pre{margin:0;padding:12px 14px;white-space:pre-wrap;word-break:break-word;font-family:inherit;font-size:14px;line-height:1.7;max-height:360px;overflow:auto}
-.status{font-size:13px;color:var(--green);min-height:20px;margin-top:6px}
-details{margin-top:12px}summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:700;color:var(--blue)}
-.nb{display:inline-block}.sub-title{font-size:clamp(16px,2.6vw,20px);font-weight:700;color:var(--muted);margin-top:4px}.fill{background:#fef7e0;border-radius:2px;padding:0 2px}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
-.cards div{border:1px solid var(--line);border-radius:6px;padding:12px;font-size:14px}.cards b{display:block;margin-bottom:4px}
-.ask{margin:12px 0 0;padding:10px 12px;border-left:4px solid var(--blue);background:var(--tint)}.refs{padding-left:20px;font-size:13px}.refs li{margin:6px 0}
-footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px}
-@media(max-width:600px){section{padding:16px}.cards{grid-template-columns:1fr}.time{display:block;margin-left:0}.head{flex-wrap:wrap}th{white-space:normal}}
+body{margin:0;background:var(--paper);color:var(--ink-mid);font-family:var(--jp);font-weight:500;font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+a{color:var(--blue-d);text-underline-offset:3px;text-decoration-thickness:1px}a,p,li,td{overflow-wrap:anywhere}
+h1,h2,h3,p{margin:0}h1,h2,h3{color:var(--ink)}
+h2{font-weight:900;font-size:clamp(22px,3.4vw,30px);line-height:1.35;letter-spacing:-.01em}
+h3{font-weight:700;font-size:17px;margin:28px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
+b,strong{color:var(--ink);font-weight:700}
+.lb{font-family:var(--lab);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+button{font:inherit;font-family:var(--jp);font-weight:700;font-size:15px;min-height:44px;padding:8px 18px;border:0;border-radius:0;background:var(--ink);color:#fff;cursor:pointer;touch-action:manipulation}
+button:hover{opacity:.85}button:active{opacity:.7}
+button.sub{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.bar{height:12px;display:grid;grid-template-columns:repeat(4,1fr)}.bar i:nth-child(1){background:var(--blue)}.bar i:nth-child(2){background:var(--red)}.bar i:nth-child(3){background:var(--yellow)}.bar i:nth-child(4){background:var(--green)}
+.wrap{max-width:1120px;margin:auto;padding:0 32px 80px}
+/* ── 表紙：6×4 のスイス・グリッド ── */
+.poster{position:relative;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto auto;border-bottom:3px solid var(--ink);margin:0 -32px;
+background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100%/6) 100%}
+.poster>*{position:relative;z-index:1}
+.p-label{grid-column:1/5;grid-row:1;padding:28px 32px 0;line-height:1.7}
+.p-label span{color:var(--faint)}
+.p-date{grid-column:1/5;grid-row:2;padding:8px 32px 0;font-family:var(--disp);font-size:clamp(96px,17vw,200px);line-height:.85;letter-spacing:-.02em;color:var(--ink)}
+.p-title{grid-column:1/5;grid-row:3;padding:28px 32px 36px}
+.p-title h1{font-weight:900;font-size:clamp(30px,5.2vw,56px);line-height:1.2;letter-spacing:-.02em}
+.p-title h1 em{font-style:normal;color:var(--blue-d)}
+.sub-title{font-weight:700;font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin-top:10px}
+.lead{margin-top:16px;max-width:36em}
+.shapes{grid-column:5/7;grid-row:1/4;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:0;padding:28px 0}
+.shapes i{display:block;place-self:center}
+.s1{grid-column:1/3;grid-row:1;width:min(15vw,170px);aspect-ratio:1;border-radius:50%;background:var(--blue)}
+.s2{grid-column:2;grid-row:2;width:min(8vw,88px);aspect-ratio:1;border-radius:50%;background:var(--red)}
+.s3{grid-column:1;grid-row:2;width:min(8vw,88px);aspect-ratio:1;border-radius:50%;background:var(--yellow)}
+.s4{grid-column:1/3;grid-row:3;width:min(9vw,100px);height:min(16vw,180px);border-radius:0 0 999px 999px;background:var(--green)}
+/* ── 目次 ── */
+nav ol{list-style:none;padding:0;margin:0 -32px;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+nav li{border-right:1px solid var(--line)}nav li:nth-child(5n){border-right:0}nav li:nth-child(-n+5){border-bottom:1px solid var(--line)}
+nav a{display:flex;align-items:baseline;gap:10px;min-height:56px;padding:12px 16px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;line-height:1.4}
+nav a:hover{background:var(--white)}
+nav .no{font-family:var(--disp);font-size:24px;line-height:1;color:var(--c)}
+nav .word{font-family:var(--lab);font-weight:800;font-size:11px;letter-spacing:.14em;color:var(--faint)}
+/* ── 約束 ── */
+.rule{margin:40px 0 0;padding:20px 0;border-top:3px solid var(--red);border-bottom:1px solid var(--line);font-size:15px}
+.rule::before{content:"RULE";display:block;font-family:var(--lab);font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--red-d);margin-bottom:6px}
+/* ── 各節：左に番号、右に中身 ── */
+section{display:grid;grid-template-columns:2fr 10fr;gap:0 32px;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink);scroll-margin-top:12px}
+section>*{grid-column:2;min-width:0}
+section>.head{grid-column:1/3;display:grid;grid-template-columns:2fr 10fr;gap:0 32px;align-items:end;margin-bottom:18px}
+.head .no{font-family:var(--disp);font-size:clamp(56px,8vw,96px);line-height:.85;color:var(--c)}
+.head .word{font-family:var(--lab);font-weight:800;font-size:13px;letter-spacing:.16em;color:var(--c);padding-bottom:6px}
+.head h2{grid-column:2}
+.head .time{grid-column:2;font-family:var(--jp);font-weight:700;font-size:13px;color:var(--muted);margin-top:4px}
+#s1,nav li:nth-child(4){--c:var(--blue)}#s2,nav li:nth-child(5){--c:var(--red)}#s3,nav li:nth-child(6){--c:var(--yellow-d)}#s4,nav li:nth-child(7){--c:var(--green)}#s5,nav li:nth-child(8){--c:var(--blue)}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:15px;margin-top:6px;border-top:1px solid var(--ink)}
+th,td{border-bottom:1px solid var(--line);padding:12px 8px 12px 0;text-align:left;vertical-align:top}
+th{white-space:nowrap;color:var(--ink);font-weight:700;width:1%;padding-right:20px}
+#flow th{font-family:var(--disp);font-weight:400;font-size:22px;line-height:1.2;letter-spacing:.02em}
+ol.do{list-style:none;counter-reset:d;padding:0;margin:0}
+ol.do li{counter-increment:d;position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line)}
+ol.do li::before{content:counter(d,decimal-leading-zero);position:absolute;left:0;top:11px;font-family:var(--disp);font-size:22px;line-height:1.3;color:var(--c)}
+ol.do li:first-child{border-top:1px solid var(--line)}
+ol.do small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.prompt{margin-top:20px;border:2px solid var(--ink);background:var(--white)}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 0 14px;border-bottom:2px solid var(--ink);font-weight:700;font-size:14px;color:var(--ink)}
+.prompt-head::before{content:"PROMPT";font-family:var(--lab);font-weight:800;font-size:11px;letter-spacing:.16em;color:var(--c);margin-right:-2px}
+.prompt-head{justify-content:flex-start}.prompt-head button{margin-left:auto}
+pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font-family:var(--jp);font-weight:500;font-size:14px;line-height:1.8;max-height:380px;overflow:auto;color:var(--ink-mid)}
+.status{font-size:13px;color:var(--green-d);font-weight:700;min-height:22px;margin-top:6px}
+details{margin-top:12px}summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:700;color:var(--blue-d)}
+.nb{display:inline-block}.fill{background:#FEF7E0;box-shadow:inset 0 -2px 0 var(--yellow);padding:0 2px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px;margin-top:20px}
+.cards div{border-top:6px solid var(--blue);padding:14px 0 0;font-size:15px}.cards div:nth-child(2){border-color:var(--red)}.cards div:nth-child(3){border-color:var(--yellow)}
+.cards b{display:block;margin-bottom:6px;font-size:16px}
+.ask{margin:18px 0 0;padding:18px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font-size:clamp(17px,2.2vw,20px);font-weight:700;color:var(--ink);line-height:1.6}
+.ask b{display:block;font-family:var(--lab);font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--blue-d);margin-bottom:6px}
+.refs{padding-left:0;list-style:none;font-size:14px}.refs li{padding:8px 0;border-bottom:1px solid var(--line)}
+footer{margin-top:72px;padding-top:16px;border-top:3px solid var(--ink);font-size:13px;color:var(--muted)}footer p{margin-top:6px}
+@media(max-width:760px){
+.wrap{padding:0 16px 64px}.poster{margin:0 -16px;grid-template-columns:repeat(4,1fr);background-size:25% 100%}
+.p-label,.p-date,.p-title{grid-column:1/5;padding-left:16px;padding-right:16px}
+.shapes{grid-column:1/5;grid-row:4;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;padding:0 0 24px}
+.s1,.s2,.s3,.s4{grid-row:1!important;width:56px!important;height:56px!important}.s1{grid-column:1}.s2{grid-column:2}.s3{grid-column:3}.s4{grid-column:4;border-radius:0 0 28px 28px;height:72px!important;width:44px!important}
+nav ol{margin:0 -16px;grid-template-columns:repeat(2,1fr)}nav li{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}nav li:nth-child(2n){border-right:0}
+section,section>.head{grid-template-columns:1fr;gap:0}section>*,.head h2,.head .time{grid-column:1}
+.head .no{font-size:56px;margin-bottom:6px}.cards{grid-template-columns:1fr;gap:20px}th{white-space:normal;width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.bar,nav,.shapes{display:none}body{background:#fff}}
 </style>
 </head>
 <body>
 <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div class="wrap">
 <header>
-<p class="eyebrow">GEG Asahikawa 学習会｜2026年11月26日（木）20:00〜21:00</p>
-<h1>Gemini で作る、<span class="nb">最強のパートナー</span></h1>
+<div class="poster">
+<p class="lb p-label">GEG Asahikawa 学習会 #114<br><span>2026.11.26 THU — 20:00〜21:00 ONLINE</span></p>
+<p class="p-date" aria-label="11月26日">11.26</p>
+<div class="p-title">
+<h1>Gemini で作る、<br><em>最強のパートナー</em></h1>
 <p class="sub-title">〜保健室から見えた、校務 DX の現在地〜</p>
-<p class="lead">自分の仕事を調べて、選ぶだけで AI への頼み方ができる「プロンプトメーカー」を作ります。<br>できた頼み方は、Gemini のスキルとして保存し、校内の先生にも渡せます。</p>
+<p class="lead">自分の仕事を調べて、選ぶだけで AI への頼み方ができる「プロンプトメーカー」を作ります。できた頼み方は Gemini のスキルとして保存し、校内の先生にも渡せます。</p>
+</div>
+<div class="shapes" aria-hidden="true"><i class="s1"></i><i class="s3"></i><i class="s2"></i><i class="s4"></i></div>
+</div>
 <nav aria-label="今日の手順"><ol>
-<li><a href="#flow"><span class="no">流</span>今日の流れ</a></li>
-<li><a href="#why"><span class="no">理</span>考え方</a></li>
-<li><a href="#s0"><span class="no">0</span>準備</a></li>
-<li><a href="#s1"><span class="no">1</span>深掘る</a></li>
-<li><a href="#s2"><span class="no">2</span>調べる</a></li>
-<li><a href="#s3"><span class="no">3</span>作る</a></li>
-<li><a href="#s4"><span class="no">4</span>スキルにする</a></li>
-<li><a href="#s5"><span class="no">5</span>共有する</a></li>
-<li><a href="#help">困ったとき</a></li>
-<li><a href="#refs">参考文献</a></li>
+<li><a href="#flow"><span class="word">TIME</span>今日の流れ</a></li>
+<li><a href="#why"><span class="word">WHY</span>考え方</a></li>
+<li><a href="#s0"><span class="no">00</span>準備</a></li>
+<li><a href="#s1"><span class="no">01</span>深掘る</a></li>
+<li><a href="#s2"><span class="no">02</span>調べる</a></li>
+<li><a href="#s3"><span class="no">03</span>作る</a></li>
+<li><a href="#s4"><span class="no">04</span>スキルにする</a></li>
+<li><a href="#s5"><span class="no">05</span>共有する</a></li>
+<li><a href="#help"><span class="word">HELP</span>困ったとき</a></li>
+<li><a href="#refs"><span class="word">REF</span>参考文献</a></li>
 </ol></nav>
 </header>
 
 <p class="rule"><strong>今日の約束：子どもの名前・健康の情報・個別の事例・校内の未公開情報は、AI に入れません。</strong><br>公開されている情報と、架空の条件だけで作ります。AI が作るのは下書きまで。使うかどうかは、先生が決めます。</p>
 
 <section id="flow">
-<div class="head"><span class="no">流</span><h2>今日の流れ</h2></div>
+<div class="head"><span class="word">TIME TABLE</span><h2>今日の流れ</h2></div>
 <table>
 <tr><th>20:00</th><td>はじめに（自己紹介・GEG Asahikawa の紹介・問い）</td></tr>
 <tr><th>20:06</th><td><b>手順1・2</b>　困りごとを深掘り、その困りごとを Deep Research で調べ始める</td></tr>
@@ -81,7 +144,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </section>
 
 <section id="why">
-<div class="head"><span class="no">理</span><h2>この講座の考え方</h2></div>
+<div class="head"><span class="word">WHY</span><h2>この講座の考え方</h2></div>
 <p>今日の順番と、作るプロンプトメーカーの中身は、学習理論・教育工学・教育心理学の知見を手がかりに組んでいます（効果を保証するものではなく、設計の手がかりです）。</p>
 <p class="ask"><b>今日を通す問い</b>　AI に任せる部分と、先生が持つ部分の境目は、どこですか。</p>
 <div class="cards">
@@ -117,7 +180,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </section>
 
 <section id="s0">
-<div class="head"><span class="no">0</span><h2>準備</h2><span class="time">はじめる前に</span></div>
+<div class="head"><span class="no">00</span><h2>準備</h2><span class="time">はじめる前に</span></div>
 <ol class="do">
 <li><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a> を別のタブで開きます。</li>
 <li>このページは開いたままにします。手順の文は、ここからコピーして貼ります。</li>
@@ -126,7 +189,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </section>
 
 <section id="s1">
-<div class="head"><span class="no">1</span><h2>困りごとを深掘る</h2><span class="time">5分</span></div>
+<div class="head"><span class="no">01</span><h2>困りごとを深掘る</h2><span class="time">5分</span></div>
 <ol class="do">
 <li>Gemini で新しいチャットを開き、下の文をコピーして、<span class="fill">〔　〕</span>を自分のことに書き換えて送ります。</li>
 <li>Gemini が4つの質問を1つずつしてきます。<b>音声入力</b>（入力欄のマイク）で答えると速いです。子どもの名前や個別のことは話さず、「よくある形」で答えます。</li>
@@ -162,7 +225,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted)}footer p{margin-top:6px
 </section>
 
 <section id="s2">
-<div class="head"><span class="no">2</span><h2>その困りごとを調べる</h2><span class="time">Deep Research：約10分／Google で検索：約1分</span></div>
+<div class="head"><span class="no">02</span><h2>その困りごとを調べる</h2><span class="time">Deep Research：約10分／Google で検索：約1分</span></div>
 <ol class="do">
 <li>新しいチャットを開き、入力欄の「<b>＋</b>」→「<b>その他のツール</b>」→「<b>Deep Research</b>」を選びます。</li>
 <li>下の文をコピーし、<span class="fill">〔手順1の「手順2に貼るメモ」をここに貼る〕</span>のところに、手順1のメモを貼って送ります。<b>送る前に、〔　〕が残っていないか確かめます</b>（1回きりです）。</li>
@@ -206,7 +269,7 @@ D. 先生が確かめる点（3〜5個）
 </section>
 
 <section id="s3">
-<div class="head"><span class="no">3</span><h2>プロンプトメーカーを作る</h2><span class="time">10分</span></div>
+<div class="head"><span class="no">03</span><h2>プロンプトメーカーを作る</h2><span class="time">10分</span></div>
 <p>Deep Research の報告は、<b>同じチャットのままでは Canvas に渡せません</b>。いったん Google ドキュメントに書き出し、新しいチャットに「ソース」として付けてから作ります。</p>
 <ol class="do">
 <li>報告の画面の右上「<b>共有とエクスポート</b>」→「<b>Google ドキュメントにエクスポート</b>」。ドキュメントがドライブにできます。</li>
@@ -252,7 +315,7 @@ D. 先生が確かめる点（3〜5個）
 </section>
 
 <section id="s4">
-<div class="head"><span class="no">4</span><h2>スキルにする</h2><span class="time">5分</span></div>
+<div class="head"><span class="no">04</span><h2>スキルにする</h2><span class="time">5分</span></div>
 <p>作ったアプリの「スキルにする」から、よく使う仕事の頼み方を Gemini のスキルとして保存します。次からは入力欄で <b>@</b> を押してスキルを選ぶと、Gemini が条件を1つずつ聞いてから下書きを作ります。</p>
 <div class="cards">
 <div><b>A　チャットで作る</b>「スキルを作る頼み方」をコピーして、Gemini のチャットに貼って送る。いちばん簡単。</div>
@@ -263,7 +326,7 @@ D. 先生が確かめる点（3〜5個）
 </section>
 
 <section id="s5">
-<div class="head"><span class="no">5</span><h2>共有する</h2><span class="time">8分</span></div>
+<div class="head"><span class="no">05</span><h2>共有する</h2><span class="time">8分</span></div>
 <p>Meet のチャット欄に1行で書いてください。</p>
 <div class="prompt"><div class="prompt-head">書き方の例<button type="button" data-copy="p5" class="sub">コピー</button></div>
 <pre id="p5">〔何の仕事〕のプロンプトメーカーを作った。理論の視点は〔　〕を選んで、〔何が変わった〕。校内の〔だれ〕に渡したい。</pre></div>
@@ -272,7 +335,7 @@ D. 先生が確かめる点（3〜5個）
 </section>
 
 <section id="help">
-<div class="head"><span class="no">?</span><h2>困ったとき</h2></div>
+<div class="head"><span class="word">HELP</span><h2>困ったとき</h2></div>
 <table>
 <tr><th>Deep Research が「1日1件を使いました」と出る・断られる</th><td>新しいチャットで「＋」→「Google で検索」を付けて、手順2の同じ文を送ります（約1分）。</td></tr>
 <tr><th>計画が出たまま進まない</th><td>「リサーチを開始」を押します。</td></tr>
@@ -285,7 +348,7 @@ D. 先生が確かめる点（3〜5個）
 </section>
 
 <section id="refs">
-<div class="head"><span class="no">文</span><h2>参考文献</h2></div>
+<div class="head"><span class="word">REFERENCES</span><h2>参考文献</h2></div>
 <ul class="refs" id="ref-list">
 <li>Anderson, L. W., &amp; Krathwohl, D. R. (Eds.). (2001). <i>A taxonomy for learning, teaching, and assessing: A revision of Bloom's taxonomy of educational objectives</i>. Longman.</li>
 <li>Bandura, A. (1977). Self-efficacy: Toward a unifying theory of behavioral change. <i>Psychological Review, 84</i>(2), 191–215.</li>
