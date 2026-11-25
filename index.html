@@ -23,7 +23,7 @@ button{font:inherit;font-family:var(--jp);font-weight:700;font-size:15px;min-hei
 button:hover{opacity:.85}button:active{opacity:.7}
 button.sub{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
 button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.bar{height:12px;display:grid;grid-template-columns:repeat(4,1fr)}.bar i:nth-child(1){background:var(--blue)}.bar i:nth-child(2){background:var(--red)}.bar i:nth-child(3){background:var(--yellow)}.bar i:nth-child(4){background:var(--green)}
+.bar{margin:0 -32px;height:12px;display:grid;grid-template-columns:repeat(4,1fr)}.bar i:nth-child(1){background:var(--blue)}.bar i:nth-child(2){background:var(--red)}.bar i:nth-child(3){background:var(--yellow)}.bar i:nth-child(4){background:var(--green)}
 body{padding:0 32px}
 .wrap{position:relative;max-width:1120px;margin:auto;padding:0 0 80px;--cols:6;--gl:#D3D6DA}
 .wrap::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;border-right:1px solid var(--gl);
@@ -60,14 +60,14 @@ nav .word{font-family:var(--lab);font-weight:800;font-size:11px;letter-spacing:.
 .rule{margin:40px 0 0 calc(100%/6 + 24px);padding:20px 0;border-top:3px solid var(--red);border-bottom:1px solid var(--line);font-size:15px}
 .rule::before{content:"RULE";display:block;font-family:var(--lab);font-weight:800;font-size:12px;letter-spacing:.16em;color:var(--red-d);margin-bottom:6px}
 /* ── 各節：左に番号、右に中身 ── */
-section{display:grid;grid-template-columns:1fr 5fr;gap:0;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink);scroll-margin-top:12px}
-section>*{grid-column:2;min-width:0;margin-left:24px}
-section>.head{grid-column:1/3;margin-left:0;display:grid;grid-template-columns:1fr 5fr;gap:0;align-items:end;margin-bottom:18px}
-.head>*{margin-left:24px}.head>.no,.head>.word{margin-left:14px}
+section{display:grid;grid-template-columns:calc(100%/6) 24px minmax(0,1fr);gap:0;margin-top:56px;padding-top:20px;border-top:3px solid var(--ink);scroll-margin-top:12px}
+section>*{grid-column:3;min-width:0}
+section>.head{grid-column:1/-1;display:grid;grid-template-columns:calc(100%/6) 24px minmax(0,1fr);gap:0;align-items:end;margin-bottom:18px}
+.head>*{grid-column:3}.head>.no,.head>.word{grid-column:1;margin-left:14px}
 .head .no{font-family:var(--disp);font-size:clamp(56px,8vw,96px);line-height:.85;color:var(--c)}
 .head .word{font-family:var(--lab);font-weight:800;font-size:13px;letter-spacing:.16em;color:var(--c);padding-bottom:6px}
-.head h2{grid-column:2}
-.head .time{grid-column:2;font-family:var(--jp);font-weight:700;font-size:13px;color:var(--muted);margin-top:4px}
+.head h2{grid-column:3}
+.head .time{grid-column:3;font-family:var(--jp);font-weight:700;font-size:13px;color:var(--muted);margin-top:4px}
 #s1,nav li:nth-child(4){--c:var(--blue)}#s2,nav li:nth-child(5){--c:var(--red)}#s3,nav li:nth-child(6){--c:var(--yellow-d)}#s4,nav li:nth-child(7){--c:var(--green)}#s5,nav li:nth-child(8){--c:var(--blue)}
 .note{font-size:14px;color:var(--muted);margin-top:12px}
 table{border-collapse:collapse;width:100%;font-size:15px;margin-top:6px;border-top:1px solid var(--ink)}
@@ -95,16 +95,16 @@ details{margin-top:12px}summary{cursor:pointer;min-height:44px;padding:10px 0;fo
 .refs{padding-left:0;list-style:none;font-size:14px}.refs li{padding:8px 0;border-bottom:1px solid var(--line)}
 footer{margin-top:72px;padding-left:14px;padding-top:16px;border-top:3px solid var(--ink);font-size:13px;color:var(--muted)}footer p{margin-top:6px}
 @media(max-width:760px){
-body{padding:0 16px}.wrap{--cols:4}
+body{padding:0 16px}.bar{margin:0 -16px}.wrap{--cols:4}
 .poster{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,auto)}.cells i:nth-child(n+21){display:none}.cells i:nth-last-child(-n+6){border-bottom:1px solid var(--gl)}.cells i:nth-child(n+17){border-bottom:0}
 .p-label,.p-date,.p-title,.lead{grid-column:1/5;padding-left:14px;padding-right:14px}
 .shapes{grid-column:1/5;grid-row:5;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;padding:16px 0 20px}
 .s1,.s2,.s3,.s4{grid-row:1!important;margin:0!important}.s1{grid-column:1/3!important;place-self:start center!important;width:84px!important}.s2{grid-column:2/3!important;place-self:end end!important;width:30px!important}.s3{grid-column:3!important;place-self:end center!important;width:52px!important}.s4{grid-column:4!important;place-self:start center!important;width:40px!important;height:76px!important;border-radius:0 0 20px 20px}
 .wrap::before{opacity:.55}.poster .cells{opacity:1}
 nav ol{grid-template-columns:repeat(2,1fr)}nav li:nth-last-child(-n+4){border-bottom:1px solid var(--gl)}nav li:nth-last-child(-n+2){border-bottom:0}
-section,section>.head{grid-template-columns:1fr 3fr}
+section,section>.head{grid-template-columns:14px minmax(0,1fr)}
 .rule{margin-left:0}.head .no{font-size:48px}
-section>*{grid-column:1/3;margin-left:14px}section>.head{grid-column:1/3}.head h2,.head .time{grid-column:1/3;margin-left:14px}.head>.no,.head>.word{grid-column:1}
+section>*{grid-column:2}section>.head{grid-column:1/-1}.head>*,.head h2,.head .time{grid-column:2}.head>.no,.head>.word{grid-column:2;margin-left:0}
 .cards{grid-template-columns:1fr;gap:20px}th{white-space:normal;width:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.bar,nav,.shapes{display:none}body{background:#fff}}
