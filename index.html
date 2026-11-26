@@ -83,6 +83,14 @@ ol.do small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
 .prompt-head::before{content:"PROMPT";font-family:var(--lab);font-weight:800;font-size:11px;letter-spacing:.16em;color:var(--c);margin-right:-2px}
 .prompt-head{justify-content:flex-start}.prompt-head button{margin-left:auto}
 pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font-family:var(--jp);font-weight:500;font-size:14px;line-height:1.8;max-height:380px;overflow:auto;color:var(--ink-mid)}
+.memo{margin-top:20px;border:2px solid var(--ink);background:var(--white)}
+.memo label{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:10px 14px;border-bottom:2px solid var(--ink);font-weight:700;font-size:14px;color:var(--ink)}
+.memo label::before{content:"MEMO";font-family:var(--lab);font-weight:800;font-size:11px;letter-spacing:.16em;color:var(--c)}
+.memo label span{font-weight:500;font-size:13px;color:var(--muted)}
+.memo textarea{display:block;width:100%;border:0;padding:14px 16px;font-family:var(--jp);font-size:16px;line-height:1.7;color:var(--ink);background:var(--white);resize:vertical;min-height:150px}
+.memo textarea:focus{outline:3px solid var(--focus);outline-offset:-3px}
+.memo-note{font-size:12px;color:var(--muted);padding:6px 16px 10px;border-top:1px solid var(--line)}
+.slot{background:#FEF7E0;box-shadow:inset 0 -2px 0 var(--yellow)}.slot.on{background:#E6F4EA;box-shadow:inset 0 -2px 0 var(--green)}
 .status{font-size:13px;color:var(--green-d);font-weight:700;min-height:22px;margin-top:6px}
 details{margin-top:12px}summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:700;color:var(--blue-d)}
 .nb{display:inline-block}.fill{background:#FEF7E0;box-shadow:inset 0 -2px 0 var(--yellow);padding:0 2px}
@@ -238,17 +246,21 @@ section>*{grid-column:2}section>.head{grid-column:1/-1}.head>*,.head h2,.head .t
 <div class="head"><span class="no">02</span><h2>その困りごとを調べる</h2><span class="time">Deep Research：約10分／Google で検索：約1分</span></div>
 <ol class="do">
 <li>新しいチャットを開き、入力欄の「<b>＋</b>」→「<b>その他のツール</b>」→「<b>Deep Research</b>」を選びます。</li>
-<li>下の文をコピーし、<span class="fill">〔手順1の「手順2に貼るメモ」をここに貼る〕</span>のところに、手順1のメモを貼って送ります。<b>送る前に、〔　〕が残っていないか確かめます</b>（1回きりです）。</li>
+<li>手順1でコピーした「手順2に貼るメモ」を、下の<b>「手順1のメモ」の欄にそのまま貼ります</b>。メモが頼み方の中に入り、1つの文になります。</li>
+<li>頼み方の「<b>コピー</b>」を押し、Deep Research のチャットに貼って送ります（1回きりなので、メモが入っているか見てから送ります）。</li>
 <li>調べる計画が出たら、<b>「リサーチを開始」</b>を押します。調べている間は、お話を聞いてください。</li>
 <li>終わったら、報告の画面の「<b>エクスポートのメニュー</b>」→「<b>Google ドキュメントにエクスポート</b>」で書き出しておきます（読み返す・同僚に渡すため）。</li>
 </ol>
 <p class="rule"><strong>Deep Research は、学校のアカウントでは1日1回までです。</strong><br>今日もう使った人・断られた人は、新しいチャットで「＋」→「<b>Google で検索</b>」を付けて、<b>同じ文</b>を送ります（約1分で出典つきの報告が出ます）。</p>
+<div class="memo"><label for="memo">手順1のメモ<span>ここに貼ると、下の頼み方に入ります</span></label>
+<textarea id="memo" rows="7" spellcheck="false" autocomplete="off" placeholder="手順1の最後に出た「手順2に貼るメモ」を、そのまま貼り付けます。"></textarea>
+<p class="memo-note">このページは、貼った文を送ったり保存したりしません（再読込で消えます）。子どもの名前や個別の事例が入っていないか、貼る前に見てください。</p></div>
 <div class="prompt"><div class="prompt-head">手順2の頼み方<button type="button" data-copy="p2">コピー</button></div>
 <pre id="p2">次の【わたしの困りごと】について、理論と先行研究にもとづいて調べ、レポートにまとめてください。
 感覚や一般論ではなく、根拠のある知見を集めてください。
 
 【わたしの困りごと】
-〔手順1の「手順2に貼るメモ」をここに貼る〕
+<span id="memo-slot" class="slot">〔手順1の「手順2に貼るメモ」をここに貼る〕</span>
 
 【調べること】
 1. この仕事の目的と、根拠になる公的な資料（法令・通知・ガイドライン・学習指導要領・手引き）
@@ -406,6 +418,10 @@ D. 先生が確かめる点（3〜5個）
 'use strict';
 // コピー。使えないときは文を選んだ状態にして、端末のコピー操作を案内する。
 function selectText(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);}
+// 手順2：手順1のメモを貼ると、頼み方の【わたしの困りごと】に入る（送らない・保存しない）
+var memo=document.getElementById('memo'),slot=document.getElementById('memo-slot'),PH=slot?slot.textContent:'';
+function fillMemo(){var t=memo.value.replace(/\r\n?/g,'\n').trim();slot.textContent=t||PH;slot.classList.toggle('on',!!t);}
+if(memo&&slot){memo.addEventListener('input',fillMemo);fillMemo();}
 document.querySelectorAll('[data-copy]').forEach(function(b){
   b.addEventListener('click',async function(){
     const pre=document.getElementById(b.dataset.copy),box=pre.closest('.prompt'),status=box.nextElementSibling;
@@ -413,7 +429,7 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
     try{
       if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('手動');
       await Promise.race([navigator.clipboard.writeText(text),new Promise(function(_,rej){timer=setTimeout(function(){rej(new Error('時間切れ'));},3000);})]);
-      status.textContent='コピーしました。Gemini に貼り付けてください。';
+      status.textContent=(b.dataset.copy==='p2'&&memo&&!memo.value.trim())?'コピーしました。ただし、手順1のメモがまだ入っていません（上の欄に貼ってから、もう一度コピー）。':'コピーしました。Gemini に貼り付けてください。';
     }catch(e){selectText(pre);status.textContent='自動でコピーできません。文を選んだので、長押し（パソコンは Ctrl+C）でコピーしてください。';}
     finally{clearTimeout(timer);}
   });
