@@ -67,7 +67,7 @@ section>.head{grid-column:1/-1;display:grid;grid-template-columns:calc(100%/6) 2
 .head .word{font-family:var(--lab);font-weight:800;font-size:13px;letter-spacing:.16em;color:var(--c);padding-bottom:6px}
 .head h2{grid-column:3}
 .head .time{grid-column:3;font-family:var(--jp);font-weight:700;font-size:13px;color:var(--muted);margin-top:4px}
-#s1,nav li:nth-child(4){--c:var(--blue)}#s2,nav li:nth-child(5){--c:var(--red)}#s3,nav li:nth-child(6){--c:var(--yellow-d)}#s4,nav li:nth-child(7){--c:var(--green)}#s5,nav li:nth-child(8){--c:var(--blue)}
+#s1,nav li:nth-child(4){--c:var(--blue)}#s2,nav li:nth-child(5){--c:var(--red)}#s3,nav li:nth-child(6){--c:var(--yellow-d)}#s4,nav li:nth-child(7){--c:var(--green)}
 .note{font-size:14px;color:var(--muted);margin-top:12px}
 table{border-collapse:collapse;width:100%;font-size:15px;margin-top:6px;border-top:1px solid var(--ink)}
 th,td{border-bottom:1px solid var(--line);padding:12px 8px 12px 0;text-align:left;vertical-align:top}
@@ -139,7 +139,6 @@ section>*{grid-column:2}section>.head{grid-column:1/-1}.head>*,.head h2,.head .t
 <li><a href="#s2"><span class="no">02</span>調べる</a></li>
 <li><a href="#s3"><span class="no">03</span>作る</a></li>
 <li><a href="#s4"><span class="no">04</span>選んでスキルに</a></li>
-<li><a href="#s5"><span class="no">05</span>共有する</a></li>
 <li><a href="#help"><span class="word">HELP</span>困ったとき</a></li>
 <li><a href="#refs"><span class="word">REF</span>参考文献</a></li>
 </ol></nav>
@@ -154,7 +153,7 @@ section>*{grid-column:2}section>.head{grid-column:1/-1}.head>*,.head h2,.head .t
 <tr><th>20:06</th><td><b>手順1・2</b>　困りごとを深掘り、その困りごとを Deep Research で調べ始める</td></tr>
 <tr><th>20:14</th><td>お話：養護教諭の研修3回から見えたこと（調べている間に聞いてください）</td></tr>
 <tr><th>20:28</th><td><b>手順3</b>　講師の画面に合わせて、みんなで一緒にプロンプトメーカーを作る<br><b>手順4</b>　自分の・仲間の・見本のアプリを触って、手応えのよかったものをスキルにする</td></tr>
-<tr><th>20:45</th><td><b>手順5</b>　共有（チャット欄に1行）</td></tr>
+<tr><th>20:45</th><td>共有（Meet のチャット欄に1行）</td></tr>
 <tr><th>20:53</th><td>まとめ・次回の予告</td></tr>
 </table>
 <h3>できあがりの見本</h3>
@@ -175,7 +174,7 @@ section>*{grid-column:2}section>.head{grid-column:1/-1}.head>*,.head h2,.head .t
 <tr><th>モデリング</th><td>見本と、講師の画面で手順1〜4を通す（講師は「なぜそうするか」を声に出す）</td></tr>
 <tr><th>足場かけ</th><td>手順1〜3の頼み方（型）。詰まったら「困ったとき」</td></tr>
 <tr><th>足場を外す</th><td>手順3のあと、直したいところを自分の言葉で Gemini に頼む</td></tr>
-<tr><th>明確化・省察</th><td>手順5の共有の1行。ほかの人の1行と比べる</td></tr>
+<tr><th>明確化・省察</th><td>最後の共有の1行。ほかの人の1行と比べる</td></tr>
 <tr><th>探索</th><td>「同じ作り方で、ほかにどの仕事が道具にできる？」を持ち帰る</td></tr>
 </table>
 <h3>プロンプトメーカーに入れる理論</h3>
@@ -350,17 +349,8 @@ D. 先生が確かめる点（3〜5個）
 <div><b>C　画面が出ないとき</b>指示の文を Google ドキュメントか Keep に保存。次から貼るだけで同じように使える。</div>
 </div>
 <p class="note">Gem は、個人のアカウントでは2026年11月17日から新しく作れなくなり、スキルに移りました。学校のアカウントでは、スキルが順に使えるようになっている途中です（2026年11月21日確認）。</p>
-</section>
-
-<section id="s5">
-<div class="head"><span class="no">05</span><h2>共有する</h2><span class="time">8分</span></div>
-<p>Meet のチャット欄に1行で書いてください。</p>
-<div class="prompt"><div class="prompt-head">書き方の例<button type="button" data-copy="p5" class="sub">コピー</button></div>
-<pre id="p5">〔何の仕事〕のプロンプトメーカーを作った。理論の視点は〔　〕を選んで、〔何が変わった〕。校内の〔だれ〕に渡したい。</pre></div>
-<p class="status" role="status" aria-live="polite"></p>
 <p class="note">作ったアプリは、Canvas の「共有」から同じ学校の先生に渡せます（学校の設定によります）。スキルは、Gemini のスキルの画面からメールアドレスを指定して共有します。</p>
 </section>
-
 <section id="help">
 <div class="head"><span class="word">HELP</span><h2>困ったとき</h2></div>
 <table>
